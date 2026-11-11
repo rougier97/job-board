@@ -1,11 +1,11 @@
 (function(){
   "use strict";
-  const TABS=["new","explore","applied","replies","dealers","playbook"];
+  const TABS=["new","inbox","explore","applied","replies","dealers","playbook"];
   const AREAS=["Bedford","Luton","Northampton","Milton Keynes"];
   const REPLY_STATES=["replied","interview","offer","started"];
   const LABEL={new:"New",applied:"Applied",replied:"Replied",interview:"Interview",offer:"Offer",started:"Started",rejected:"Not this time",dismissed:"Not for me",closed:"Closed"};
   const KEY="plan.status.v1";
-  let jobs=[], dealers=[], explore=[], mail=[], meta=null, exFilter="All", loaded=false, failed=false;
+  let jobs=[], dealers=[], explore=[], mail=[], updates=[], meta=null, exFilter="All", loaded=false, failed=false;
   let local={}; try{local=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(_){local={};}
   const view=document.getElementById("view");
 
@@ -131,6 +131,7 @@
     document.getElementById("s-replies").textContent=live;
     document.getElementById("s-dealers").textContent=dealers.length;
     const bn=document.getElementById("b-new");bn.hidden=!nw.length;bn.textContent=nw.length;
+    const un=unreadCount(),bi=document.getElementById("b-inbox");bi.hidden=!un||tab==="inbox";bi.textContent=un;
     const br=document.getElementById("b-replies");br.hidden=!live;br.textContent=live;
     if(meta&&meta.lastScan)document.getElementById("scanline").textContent=`Last checked ${fmtDate(meta.lastScan)} · ${meta.lastSummary||""}`;
     if(failed&&!jobs.length){view.innerHTML=`<div class="notice">Can't load your jobs right now. Check your signal and pull down to refresh.</div>`;return;}
@@ -147,6 +148,11 @@
     if(tab==="new"){
       h+=`<div class="sectionhead"><h2>Apply now</h2><small>${vac.length} live</small></div>`+list(vac,"No new vacancies. Next check at 6:31am or 5:31pm.");
       h+=`<div class="sectionhead"><h2>Ask directly</h2><small>${spec.length}</small></div>`+list(spec,"No direct approaches waiting.");
+    }else if(tab==="inbox"){
+      const items=inboxItems(), seen=local.__inboxSeen||"";
+      h+=`<div class="sectionhead"><h2>Inbox</h2><small>${items.length}</small></div><p class="meta">Every employer email and PLAN update, so you don't need to open your email. Checked every hour.</p>`;
+      h+=items.length?items.map(i=>noteCard(i,seen)).join(""):`<div class="empty">Nothing yet. Employer replies will show up here within the hour.</div>`;
+      if(items.length&&String(items[0].t)>seen){setTimeout(()=>{local.__inboxSeen=String(items[0].t);save();},1500);}
     }else if(tab==="explore"){
       const today=new Date().toISOString().slice(0,10);
       const live=explore.filter(x=>(!x.closes||x.closes>=today)&&st(x)==="new"&&fresh(x));
@@ -188,8 +194,29 @@
       if(!up)return;const rec=local[m.id]||{};rec.status=to;if(!rec.appliedOn)rec.appliedOn=String(m.date).slice(0,10);
       if(it)rec.snap=snapOf(it);local[m.id]=rec;changed.push(m);});
     save();
-    if(changed.length){const m=changed[0];toast(changed.length>1?`${changed.length} employer emails, check Replies`:`📧 ${m.from||"Employer"}: ${MAIL_TEXT[m.kind]||"emailed you"}`);}
+    if(changed.length){const m=changed[0];toast(changed.length>1?`${changed.length} employer emails, check Inbox`:`📧 ${m.from||"Employer"}: ${MAIL_TEXT[m.kind]||"emailed you"}`);}
   }
+  // Inbox: employer emails (summarised) and PLAN's own updates, newest first.
+  const MAIL_ICON={ack:"📨",reply:"💬",interview:"🎉",offer:"🏆",rejected:"✖️"};
+  const MAIL_HEAD={ack:"Application received",reply:"They replied",interview:"Interview invite",offer:"Job offer",rejected:"Not this time"};
+  function whenStr(t){if(!t)return"";const d=new Date(t);if(isNaN(d))return esc(t);const mins=Math.round((Date.now()-d)/60000);
+    if(mins<1)return"just now";if(mins<60)return mins+" min ago";const today=new Date().toDateString()===d.toDateString();
+    return (today?"Today ":d.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"})+" ")+d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"});}
+  function inboxItems(){
+    const a=mail.map(m=>({t:m.time||m.date,mail:m})).concat(updates.map(u=>({t:u.time,upd:u})));
+    return a.sort((x,y)=>String(y.t).localeCompare(String(x.t)));}
+  function unreadCount(){const seen=local.__inboxSeen||"";return inboxItems().filter(i=>String(i.t)>seen).length;}
+  function noteCard(i,seen){
+    const unread=String(i.t)>seen?" unread":"";
+    if(i.upd)return `<article class="note sys${unread}"><div class="top"><span class="ic">🤖</span><div><h3>PLAN update</h3><div class="when">${whenStr(i.t)}</div></div></div><p>${esc(i.upd.text)}</p></article>`;
+    const m=i.mail, it=findItem(m.id);
+    return `<article class="note${unread}"><div class="top"><span class="ic">${MAIL_ICON[m.kind]||"📧"}</span><div>
+      <h3>${esc(MAIL_HEAD[m.kind]||"Email from employer")} · ${esc(m.from||"")}</h3>
+      <div class="when">${esc(m.role||(it&&it.title)||"")}${m.role||it?" · ":""}${whenStr(i.t)}</div></div></div>
+      ${m.summary?`<p>${esc(m.summary)}</p>`:""}
+      ${m.action?`<div class="todo"><b>What to do:</b> ${esc(m.action)}${m.deadline?` <b>By ${fmtDate(m.deadline)}</b>`:""}</div>`:""}
+      <div class="actions">${it&&it.prep&&m.kind!=="rejected"?`<button class="btn" data-prep="${esc(it.id)}">Interview prep</button>`:""}<button class="btn" data-goto="${REPLY_STATES.includes(st({id:m.id}))||m.kind!=="ack"?"replies":"applied"}">See the job</button></div>
+    </article>`;}
   const TRACKED=["applied","replied","interview","offer","started","rejected"];
   function snapOf(it){if(!it)return null;const o={};["title","company","town","pay","link","applyUrl","category","type","driveMins"].forEach(k=>{if(it[k]!=null)o[k]=it[k];});
     o.cvHref=it.category?"cvs/base.pdf":(it.cv?`cvs/${safeId(it.id)}.pdf`:"cvs/base.pdf");return o;}
@@ -245,6 +272,7 @@
     const c=e.target.closest("[data-copy]");
     if(c){const j=jobs.find(x=>x.id===c.dataset.copy);if(!j)return;
       (navigator.clipboard?navigator.clipboard.writeText(j.cover):Promise.reject()).then(()=>toast("Message copied")).catch(()=>toast("Open “Cover message” and copy it"));return;}
+    const g=e.target.closest("[data-goto]");if(g){location.hash=g.dataset.goto;window.scrollTo(0,0);return;}
     const f=e.target.closest("[data-filter]");if(f){exFilter=f.dataset.filter;render();return;}
     const p=e.target.closest("[data-prep]");if(p){const j=jobs.find(x=>x.id===p.dataset.prep);if(j)openSheet(`Prep: ${j.company}`,`<div class="prep">${esc(j.prep)}</div>`);return;}
     const s=e.target.closest("[data-set]");if(s)setStatus(s.dataset.id,s.dataset.set);
@@ -258,6 +286,7 @@
     const v="?t="+Date.now();
     try{
       const [a,b,c,x]=await Promise.all(["data/jobs.json","data/dealers.json","data/meta.json","data/explore.json"].map(u=>fetch(u+v,{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json();})));
+      try{const r=await fetch("data/updates.json"+v,{cache:"no-store"});updates=r.ok?await r.json():[];if(!Array.isArray(updates))updates=[];}catch(_){updates=[];}
       try{const r=await fetch("data/replies.json"+v,{cache:"no-store"});mail=r.ok?await r.json():[];if(!Array.isArray(mail))mail=[];}catch(_){mail=[];}
       jobs=Array.isArray(a)?a:[];dealers=Array.isArray(b)?b:[];meta=c||null;explore=Array.isArray(x)?x:[];failed=false;
       const stamp=(meta&&meta.lastScan)||"";if(lastStamp&&stamp!==lastStamp&&!manual)toast("PLAN just updated");lastStamp=stamp;

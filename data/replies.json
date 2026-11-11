@@ -1,3 +1,13 @@
 [
-  {"id": "allen-ford-northampton-sales-executive", "kind": "ack", "from": "Allen Motor Group", "date": "2026-11-11"}
+  {
+    "id": "allen-ford-northampton-sales-executive",
+    "kind": "ack",
+    "from": "Allen Motor Group",
+    "role": "Sales Executive – Ford Northampton",
+    "date": "2026-11-11",
+    "time": "2026-11-11T14:23:37Z",
+    "summary": "They've received your application and will review it shortly, then get back to you as soon as possible.",
+    "action": "Nothing to do yet. Have your interview prep ready in case they call.",
+    "deadline": ""
+  }
 ]
