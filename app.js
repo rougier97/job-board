@@ -193,5 +193,16 @@
   document.getElementById("back").addEventListener("click",()=>{if(history.length>1&&document.referrer.indexOf(location.host)>-1)history.back();else{location.hash="new";}window.scrollTo(0,0);});
   // Live updates: check for new data every 60 seconds while the app is open.
   setInterval(()=>{if(document.visibilityState==="visible")load(false);},60000);
+  // Pull down from the top to refresh.
+  (function(){
+    const ind=document.getElementById("ptr");let startY=null,pull=0,busy=false;const MAX=90,TRIGGER=65;
+    function set(px,txt){ind.style.height=px+"px";ind.textContent=txt;ind.classList.toggle("on",px>0);}
+    window.addEventListener("touchstart",e=>{if(busy||window.scrollY>0||document.getElementById("sheet").classList.contains("open"))return;startY=e.touches[0].clientY;pull=0;},{passive:true});
+    window.addEventListener("touchmove",e=>{if(startY===null)return;const dy=e.touches[0].clientY-startY;if(dy<=0||window.scrollY>0){pull=0;set(0,"");return;}
+      pull=Math.min(MAX,dy*0.5);set(pull,pull>=TRIGGER?"Release to refresh":"Pull to refresh");},{passive:true});
+    window.addEventListener("touchend",async()=>{if(startY===null)return;startY=null;
+      if(pull>=TRIGGER){busy=true;set(44,"Checking for updates…");await load(true);set(44,"Up to date");setTimeout(()=>{set(0,"");busy=false;},700);}else set(0,"");pull=0;});
+  })();
+
   render();load();
 })();
