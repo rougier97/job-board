@@ -9,5 +9,27 @@
     "summary": "They've received your application and will review it shortly, then get back to you as soon as possible.",
     "action": "Nothing to do yet. Have your interview prep ready in case they call.",
     "deadline": ""
+  },
+  {
+    "id": "other-verisure",
+    "kind": "interview",
+    "from": "Verisure",
+    "role": "Sales role (Verisure Sales Recruitment)",
+    "date": "2026-11-10",
+    "time": "2026-11-10T15:18:50Z",
+    "summary": "Louisa from Verisure's sales recruitment team wished you luck for your interview on Wednesday 11 November at 11am and said the hiring manager is looking forward to meeting you. She asked you to reply to confirm you'd attend.",
+    "action": "That interview was this morning — if you went, just wait for their decision; if you missed it, contact Louisa at Verisure today to apologise and ask to rebook.",
+    "deadline": "2026-11-11"
+  },
+  {
+    "id": "allen-ford-northampton-sales-executive",
+    "kind": "ack",
+    "from": "Allen Motor Group",
+    "role": "Allen Motor Group talent profile",
+    "date": "2026-11-11",
+    "time": "2026-11-11T14:39:12Z",
+    "summary": "Sarah Mills at Allen Motor Group welcomed you to their candidate network and said they'll keep you updated on jobs that suit your profile.",
+    "action": "Optional: fill in your Allen candidate profile (link in the Allen 'Welcome' email) so they can match you to more roles.",
+    "deadline": ""
   }
 ]
