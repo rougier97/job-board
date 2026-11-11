@@ -1,452 +1,452 @@
 [
- {
-  "id": "allen-chery-mk",
-  "name": "Allen Motor Group – Chery Milton Keynes",
-  "group": "Allen Motor Group",
-  "area": "Milton Keynes",
-  "careersUrl": "https://allenmotorgroup.teamtailor.com/",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "allen-ford-northampton",
-  "name": "Allen Motor Group – Ford Northampton",
-  "group": "Allen Motor Group",
-  "area": "Northampton",
-  "careersUrl": "https://allenmotorgroup.teamtailor.com/",
-  "openRoles": 1,
-  "note": "Sales Executive open (no experience needed)",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "allen-kia-mk",
-  "name": "Allen Motor Group – Kia Milton Keynes",
-  "group": "Allen Motor Group",
-  "area": "Milton Keynes",
-  "careersUrl": "https://allenmotorgroup.teamtailor.com/",
-  "openRoles": 0,
-  "note": "Often hires sales advisors with no experience",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "allen-maxus-northampton",
-  "name": "Allen Motor Group – MAXUS Northampton",
-  "group": "Allen Motor Group",
-  "area": "Northampton",
-  "careersUrl": "https://allenmotorgroup.teamtailor.com/",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "allen-omoda-mk",
-  "name": "Allen Motor Group – OMODA Milton Keynes",
-  "group": "Allen Motor Group",
-  "area": "Milton Keynes",
-  "careersUrl": "https://allenmotorgroup.teamtailor.com/",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "auto-globe",
-  "name": "Auto Globe",
-  "group": "Independent",
-  "area": "Milton Keynes",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "No job ads found",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "bells-kia-northampton",
-  "name": "Bells Kia Northampton",
-  "group": "Bells Motor Group",
-  "area": "Northampton",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "bells-volvo-bedford",
-  "name": "Bells Volvo Bedford",
-  "group": "Bells Motor Group",
-  "area": "Bedford",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "bells-volvo-northampton",
-  "name": "Bells Volvo Northampton",
-  "group": "Bells Motor Group",
-  "area": "Northampton",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "bf-cars",
-  "name": "B&F Cars Northampton",
-  "group": "Independent",
-  "area": "Northampton",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "No job ads found",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "bmw-bedford",
-  "name": "BMW Bedford",
-  "group": "Group 1 Automotive",
-  "area": "Bedford",
-  "careersUrl": "https://www.careers.group1auto.co.uk",
-  "openRoles": 0,
-  "note": "Past Sales Administrator and Product Genius ads have expired",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "bmw-luton",
-  "name": "BMW Luton",
-  "group": "Sytner",
-  "area": "Luton",
-  "careersUrl": "https://jobs.sytner.co.uk",
-  "openRoles": 0,
-  "note": "Sales exec listing closed",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "carnet-bedford",
-  "name": "Carnet Bedford",
-  "group": "Independent",
-  "area": "Bedford",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "No vacancies page or job ads found",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "crystal-motor-company",
-  "name": "Crystal Motor Company",
-  "group": "Independent",
-  "area": "Northampton",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "No job ads found",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "eagell-toyota-bedford",
-  "name": "Steven Eagell Toyota Bedford",
-  "group": "Steven Eagell",
-  "area": "Bedford",
-  "careersUrl": "https://steveneagell.wd3.myworkdayjobs.com/ExternalCareerSite",
-  "openRoles": 0,
-  "note": "Recruitment line 01234 827198",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "eagell-toyota-mk",
-  "name": "Steven Eagell Toyota Milton Keynes",
-  "group": "Steven Eagell",
-  "area": "Milton Keynes",
-  "careersUrl": "https://steveneagell.wd3.myworkdayjobs.com/ExternalCareerSite",
-  "openRoles": 0,
-  "note": "Recruitment line 01908 248911",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "eagell-toyota-northampton",
-  "name": "Steven Eagell Toyota Northampton",
-  "group": "Steven Eagell",
-  "area": "Northampton",
-  "careersUrl": "https://steveneagell.wd3.myworkdayjobs.com/ExternalCareerSite",
-  "openRoles": 0,
-  "note": "Recruitment line 01604 788304",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "eh-ford-bedford",
-  "name": "Evans Halshaw Ford Bedford",
-  "group": "Evans Halshaw",
-  "area": "Bedford",
-  "careersUrl": "https://careers.lithia.co.uk",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "eh-ford-mk",
-  "name": "Evans Halshaw Ford Milton Keynes",
-  "group": "Evans Halshaw",
-  "area": "Milton Keynes",
-  "careersUrl": "https://careers.lithia.co.uk",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "eh-vauxhall-bedford",
-  "name": "Evans Halshaw Vauxhall Bedford",
-  "group": "Evans Halshaw",
-  "area": "Bedford",
-  "careersUrl": "https://careers.lithia.co.uk",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "evans-halshaw-group",
-  "name": "Evans Halshaw (nearby group vacancies)",
-  "group": "Evans Halshaw",
-  "area": "Luton",
-  "careersUrl": "https://careers.lithia.co.uk",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "fs-performance",
-  "name": "FS Performance",
-  "group": "Independent",
-  "area": "Luton",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "No vacancies page or job ads found",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "hampton-car-sales",
-  "name": "Hampton Car Sales",
-  "group": "Independent",
-  "area": "Northampton",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "No job ads found",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "jaguar-northampton",
-  "name": "Jaguar Northampton",
-  "group": "Sytner",
-  "area": "Northampton",
-  "careersUrl": "https://jobs.sytner.co.uk",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "listers-honda-northampton",
-  "name": "Listers Honda Northampton",
-  "group": "Listers",
-  "area": "Northampton",
-  "careersUrl": "https://careers.listers.co.uk",
-  "openRoles": 0,
-  "note": "Last sales exec role (experience not essential) now closed",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "lr-northampton",
-  "name": "Land Rover Northampton",
-  "group": "Sytner",
-  "area": "Northampton",
-  "careersUrl": "https://jobs.sytner.co.uk",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "marshall-lr-bedford",
-  "name": "Marshall Land Rover Bedford",
-  "group": "Marshall Motor Group",
-  "area": "Bedford",
-  "careersUrl": "https://careers.marshall.co.uk",
-  "openRoles": 0,
-  "note": "Only a technician role listed in Bedford",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "marshall-volvo-mk",
-  "name": "Marshall Volvo Milton Keynes",
-  "group": "Marshall Motor Group",
-  "area": "Milton Keynes",
-  "careersUrl": "https://careers.marshall.co.uk",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "marshall-vw-mk",
-  "name": "Marshall Volkswagen Milton Keynes",
-  "group": "Marshall Motor Group",
-  "area": "Milton Keynes",
-  "careersUrl": "https://careers.marshall.co.uk",
-  "openRoles": 0,
-  "note": "Sales Executive role has closed",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "mb-milton-keynes",
-  "name": "Mercedes-Benz of Milton Keynes",
-  "group": "Sytner",
-  "area": "Milton Keynes",
-  "careersUrl": "https://jobs.sytner.co.uk",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "mb-northampton",
-  "name": "Mercedes-Benz of Northampton",
-  "group": "Sytner",
-  "area": "Northampton",
-  "careersUrl": "https://jobs.sytner.co.uk",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "mini-luton",
-  "name": "MINI Luton",
-  "group": "Sytner",
-  "area": "Luton",
-  "careersUrl": "https://jobs.sytner.co.uk",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "motorvogue-bedford",
-  "name": "Motorvogue Bedford",
-  "group": "Motorvogue",
-  "area": "Bedford",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "Has hired trainee sales execs with no experience before. Nothing open now",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "motorvogue-northampton",
-  "name": "Motorvogue Northampton",
-  "group": "Motorvogue",
-  "area": "Northampton",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "nmj-motorhouse",
-  "name": "NMJ Motorhouse",
-  "group": "Independent",
-  "area": "Milton Keynes",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "No job ads found",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "parkway-vw-northampton",
-  "name": "Parkway Volkswagen Northampton",
-  "group": "Parkway",
-  "area": "Northampton",
-  "careersUrl": "https://careers.parkwayvolkswagen.co.uk",
-  "openRoles": 0,
-  "note": "No Northampton sales role. Kettering site is hiring",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "perrys-mk",
-  "name": "Perrys Motor Sales",
-  "group": "Perrys",
-  "area": "Milton Keynes",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "Citroën/Peugeot MK sales exec seen on boards but undated",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "richard-sanders-renault",
-  "name": "Richard Sanders Renault",
-  "group": "Independent",
-  "area": "Northampton",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "Has run car sales apprenticeships before. None open now",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "sm-specialist-cars",
-  "name": "SM Specialist Cars",
-  "group": "Independent",
-  "area": "Bedford",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "No vacancies page or job ads found",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "smart-milton-keynes",
-  "name": "smart of Milton Keynes",
-  "group": "Sytner",
-  "area": "Milton Keynes",
-  "careersUrl": "https://jobs.sytner.co.uk",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "stratstone-exotics",
-  "name": "Stratstone Exotics",
-  "group": "Stratstone",
-  "area": "Milton Keynes",
-  "careersUrl": "https://careers.stratstone.com",
-  "openRoles": 0,
-  "note": "Only aftersales/parts roles in MK right now",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "sytner-select-northampton",
-  "name": "Sytner Select Northampton",
-  "group": "Sytner",
-  "area": "Northampton",
-  "careersUrl": "https://jobs.sytner.co.uk",
-  "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "thurlow-nunn-vauxhall-luton",
-  "name": "Thurlow Nunn Vauxhall Luton",
-  "group": "Thurlow Nunn",
-  "area": "Luton",
-  "careersUrl": "https://careers.thurlownunn.co.uk/jobs",
-  "openRoles": 1,
-  "note": "Sales Administrator (maternity cover) listed",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "wollaston-bmw",
-  "name": "Wollaston BMW",
-  "group": "Wollaston",
-  "area": "Northampton",
-  "careersUrl": "",
-  "openRoles": 0,
-  "note": "Older listings need 1yr car sales; nothing current found",
-  "lastChecked": "2026-11-11"
- },
- {
-  "id": "parkway-vw-kettering",
-  "name": "Parkway Volkswagen Kettering",
-  "group": "Parkway",
-  "area": "Northampton",
-  "careersUrl": "https://careers.parkwayvolkswagen.co.uk",
-  "openRoles": 0,
-  "note": "Retail Consultant advert taken down",
-  "lastChecked": "2026-11-11"
- }
+  {
+    "id": "allen-chery-mk",
+    "name": "Allen Motor Group – Chery Milton Keynes",
+    "group": "Allen Motor Group",
+    "area": "Milton Keynes",
+    "careersUrl": "https://allenmotorgroup.teamtailor.com/",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "allen-ford-northampton",
+    "name": "Allen Motor Group – Ford Northampton",
+    "group": "Allen Motor Group",
+    "area": "Northampton",
+    "careersUrl": "https://allenmotorgroup.teamtailor.com/",
+    "openRoles": 1,
+    "note": "Sales Executive open (no experience needed)",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "allen-kia-mk",
+    "name": "Allen Motor Group – Kia Milton Keynes",
+    "group": "Allen Motor Group",
+    "area": "Milton Keynes",
+    "careersUrl": "https://allenmotorgroup.teamtailor.com/",
+    "openRoles": 0,
+    "note": "Often hires sales advisors with no experience",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "allen-maxus-northampton",
+    "name": "Allen Motor Group – MAXUS Northampton",
+    "group": "Allen Motor Group",
+    "area": "Northampton",
+    "careersUrl": "https://allenmotorgroup.teamtailor.com/",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "allen-omoda-mk",
+    "name": "Allen Motor Group – OMODA Milton Keynes",
+    "group": "Allen Motor Group",
+    "area": "Milton Keynes",
+    "careersUrl": "https://allenmotorgroup.teamtailor.com/",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "auto-globe",
+    "name": "Auto Globe",
+    "group": "Independent",
+    "area": "Milton Keynes",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "No job ads found",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "bells-kia-northampton",
+    "name": "Bells Kia Northampton",
+    "group": "Bells Motor Group",
+    "area": "Northampton",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "bells-volvo-bedford",
+    "name": "Bells Volvo Bedford",
+    "group": "Bells Motor Group",
+    "area": "Bedford",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "bells-volvo-northampton",
+    "name": "Bells Volvo Northampton",
+    "group": "Bells Motor Group",
+    "area": "Northampton",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "bf-cars",
+    "name": "B&F Cars Northampton",
+    "group": "Independent",
+    "area": "Northampton",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "No job ads found",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "bmw-bedford",
+    "name": "BMW Bedford",
+    "group": "Group 1 Automotive",
+    "area": "Bedford",
+    "careersUrl": "https://www.careers.group1auto.co.uk",
+    "openRoles": 0,
+    "note": "Past Sales Administrator and Product Genius ads have expired",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "bmw-luton",
+    "name": "BMW Luton",
+    "group": "Sytner",
+    "area": "Luton",
+    "careersUrl": "https://jobs.sytner.co.uk",
+    "openRoles": 0,
+    "note": "Sales exec listing closed",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "carnet-bedford",
+    "name": "Carnet Bedford",
+    "group": "Independent",
+    "area": "Bedford",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "No vacancies page or job ads found",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "crystal-motor-company",
+    "name": "Crystal Motor Company",
+    "group": "Independent",
+    "area": "Northampton",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "No job ads found",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "eagell-toyota-bedford",
+    "name": "Steven Eagell Toyota Bedford",
+    "group": "Steven Eagell",
+    "area": "Bedford",
+    "careersUrl": "https://steveneagell.wd3.myworkdayjobs.com/ExternalCareerSite",
+    "openRoles": 0,
+    "note": "Recruitment line 01234 827198",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "eagell-toyota-mk",
+    "name": "Steven Eagell Toyota Milton Keynes",
+    "group": "Steven Eagell",
+    "area": "Milton Keynes",
+    "careersUrl": "https://steveneagell.wd3.myworkdayjobs.com/ExternalCareerSite",
+    "openRoles": 0,
+    "note": "Recruitment line 01908 248911",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "eagell-toyota-northampton",
+    "name": "Steven Eagell Toyota Northampton",
+    "group": "Steven Eagell",
+    "area": "Northampton",
+    "careersUrl": "https://steveneagell.wd3.myworkdayjobs.com/ExternalCareerSite",
+    "openRoles": 0,
+    "note": "Recruitment line 01604 788304",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "eh-ford-bedford",
+    "name": "Evans Halshaw Ford Bedford",
+    "group": "Evans Halshaw",
+    "area": "Bedford",
+    "careersUrl": "https://careers.lithia.co.uk",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "eh-ford-mk",
+    "name": "Evans Halshaw Ford Milton Keynes",
+    "group": "Evans Halshaw",
+    "area": "Milton Keynes",
+    "careersUrl": "https://careers.lithia.co.uk",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "eh-vauxhall-bedford",
+    "name": "Evans Halshaw Vauxhall Bedford",
+    "group": "Evans Halshaw",
+    "area": "Bedford",
+    "careersUrl": "https://careers.lithia.co.uk",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "evans-halshaw-group",
+    "name": "Evans Halshaw (nearby group vacancies)",
+    "group": "Evans Halshaw",
+    "area": "Luton",
+    "careersUrl": "https://careers.lithia.co.uk",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "fs-performance",
+    "name": "FS Performance",
+    "group": "Independent",
+    "area": "Luton",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "No vacancies page or job ads found",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "hampton-car-sales",
+    "name": "Hampton Car Sales",
+    "group": "Independent",
+    "area": "Northampton",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "No job ads found",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "jaguar-northampton",
+    "name": "Jaguar Northampton",
+    "group": "Sytner",
+    "area": "Northampton",
+    "careersUrl": "https://jobs.sytner.co.uk",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "listers-honda-northampton",
+    "name": "Listers Honda Northampton",
+    "group": "Listers",
+    "area": "Northampton",
+    "careersUrl": "https://careers.listers.co.uk",
+    "openRoles": 0,
+    "note": "Last sales exec role (experience not essential) now closed",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "lr-northampton",
+    "name": "Land Rover Northampton",
+    "group": "Sytner",
+    "area": "Northampton",
+    "careersUrl": "https://jobs.sytner.co.uk",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "marshall-lr-bedford",
+    "name": "Marshall Land Rover Bedford",
+    "group": "Marshall Motor Group",
+    "area": "Bedford",
+    "careersUrl": "https://careers.marshall.co.uk",
+    "openRoles": 0,
+    "note": "Only a technician role listed in Bedford",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "marshall-volvo-mk",
+    "name": "Marshall Volvo Milton Keynes",
+    "group": "Marshall Motor Group",
+    "area": "Milton Keynes",
+    "careersUrl": "https://careers.marshall.co.uk",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "marshall-vw-mk",
+    "name": "Marshall Volkswagen Milton Keynes",
+    "group": "Marshall Motor Group",
+    "area": "Milton Keynes",
+    "careersUrl": "https://careers.marshall.co.uk",
+    "openRoles": 0,
+    "note": "Sales Executive role has closed",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "mb-milton-keynes",
+    "name": "Mercedes-Benz of Milton Keynes",
+    "group": "Sytner",
+    "area": "Milton Keynes",
+    "careersUrl": "https://jobs.sytner.co.uk",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "mb-northampton",
+    "name": "Mercedes-Benz of Northampton",
+    "group": "Sytner",
+    "area": "Northampton",
+    "careersUrl": "https://jobs.sytner.co.uk",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "mini-luton",
+    "name": "MINI Luton",
+    "group": "Sytner",
+    "area": "Luton",
+    "careersUrl": "https://jobs.sytner.co.uk",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "motorvogue-bedford",
+    "name": "Motorvogue Bedford",
+    "group": "Motorvogue",
+    "area": "Bedford",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "Has hired trainee sales execs with no experience before. Nothing open now",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "motorvogue-northampton",
+    "name": "Motorvogue Northampton",
+    "group": "Motorvogue",
+    "area": "Northampton",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "nmj-motorhouse",
+    "name": "NMJ Motorhouse",
+    "group": "Independent",
+    "area": "Milton Keynes",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "No job ads found",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "parkway-vw-northampton",
+    "name": "Parkway Volkswagen Northampton",
+    "group": "Parkway",
+    "area": "Northampton",
+    "careersUrl": "https://careers.parkwayvolkswagen.co.uk",
+    "openRoles": 0,
+    "note": "No Northampton sales role. Kettering site is hiring",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "perrys-mk",
+    "name": "Perrys Motor Sales",
+    "group": "Perrys",
+    "area": "Milton Keynes",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "Citroën/Peugeot MK sales exec seen on boards but undated",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "richard-sanders-renault",
+    "name": "Richard Sanders Renault",
+    "group": "Independent",
+    "area": "Northampton",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "Has run car sales apprenticeships before. None open now",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "sm-specialist-cars",
+    "name": "SM Specialist Cars",
+    "group": "Independent",
+    "area": "Bedford",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "No vacancies page or job ads found",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "smart-milton-keynes",
+    "name": "smart of Milton Keynes",
+    "group": "Sytner",
+    "area": "Milton Keynes",
+    "careersUrl": "https://jobs.sytner.co.uk",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "stratstone-exotics",
+    "name": "Stratstone Exotics",
+    "group": "Stratstone",
+    "area": "Milton Keynes",
+    "careersUrl": "https://careers.stratstone.com",
+    "openRoles": 0,
+    "note": "Only aftersales/parts roles in MK right now",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "sytner-select-northampton",
+    "name": "Sytner Select Northampton",
+    "group": "Sytner",
+    "area": "Northampton",
+    "careersUrl": "https://jobs.sytner.co.uk",
+    "openRoles": 0,
+    "note": "",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "thurlow-nunn-vauxhall-luton",
+    "name": "Thurlow Nunn Vauxhall Luton",
+    "group": "Thurlow Nunn",
+    "area": "Luton",
+    "careersUrl": "https://careers.thurlownunn.co.uk/jobs",
+    "openRoles": 0,
+    "note": "Sales Administrator advert couldn't be confirmed as still open, so it was removed",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "wollaston-bmw",
+    "name": "Wollaston BMW",
+    "group": "Wollaston",
+    "area": "Northampton",
+    "careersUrl": "",
+    "openRoles": 0,
+    "note": "Older listings need 1yr car sales; nothing current found",
+    "lastChecked": "2026-11-11"
+  },
+  {
+    "id": "parkway-vw-kettering",
+    "name": "Parkway Volkswagen Kettering",
+    "group": "Parkway",
+    "area": "Northampton",
+    "careersUrl": "https://careers.parkwayvolkswagen.co.uk",
+    "openRoles": 0,
+    "note": "Retail Consultant advert taken down",
+    "lastChecked": "2026-11-11"
+  }
 ]
