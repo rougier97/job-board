@@ -169,7 +169,13 @@
       h+=`<div class="sectionhead"><h2>Replies &amp; interviews</h2><small>${live} active</small></div>`+listAny(replies,"No replies yet. PLAN checks your inbox every hour and moves jobs here when an employer emails you.");
     }else if(tab==="dealers"){
       h+=`<div class="sectionhead"><h2>Dealers watched</h2><small>${dealers.length}</small></div><p class="meta">Every dealer PLAN checks for you. The green tag shows how many jobs that dealer is advertising right now that suit you. Those jobs are in your New tab. "No jobs right now" just means nothing suitable is advertised today; you can still approach them directly.</p>`;
-      const g={};dealers.forEach(d=>{const a=AREAS.includes(d.area)?d.area:"Other";(g[a]=g[a]||[]).push(d);});
+      const dRow=d=>{const u=safeUrl(d.careersUrl),n=d.openRoles||0;
+          return `<div class="dealer"><span class="n">${esc(d.name)}</span><span class="chip ${n?"good":""}">${n?(n===1?"1 job for you":n+" jobs for you"):"No jobs right now"}</span>
+          <span class="m">${esc(d.area||"")}${d.area?" · ":""}${esc(d.group||"Independent")}${d.lastChecked?" · checked "+fmtDate(d.lastChecked):""}${d.note?" · "+esc(d.note):""}</span>
+          ${u?`<a href="${esc(u)}" target="_blank" rel="noopener">Careers page</a>`:""}</div>`;};
+      const hiring=dealers.filter(d=>(d.openRoles||0)>0).sort((x,y)=>(y.openRoles||0)-(x.openRoles||0)||String(x.name).localeCompare(String(y.name)));
+      h+=`<div class="area"><h3>🔥 Hiring now (${hiring.length})</h3>`+(hiring.length?hiring.map(dRow).join(""):`<div class="empty">No dealer is advertising a suitable job right now. PLAN checks every hour.</div>`)+`</div>`;
+      const g={};dealers.filter(d=>!(d.openRoles>0)).forEach(d=>{const a=AREAS.includes(d.area)?d.area:"Other";(g[a]=g[a]||[]).push(d);});
       [...AREAS,"Other"].forEach(a=>{const ds=g[a];if(!ds)return;ds.sort((x,y)=>(y.openRoles||0)-(x.openRoles||0)||String(x.name).localeCompare(String(y.name)));
         h+=`<div class="area"><h3>${esc(a)}</h3>`+ds.map(d=>{const u=safeUrl(d.careersUrl),n=d.openRoles||0;
           return `<div class="dealer"><span class="n">${esc(d.name)}</span><span class="chip ${n?"good":""}">${n?(n===1?"1 job for you":n+" jobs for you"):"No jobs right now"}</span>
