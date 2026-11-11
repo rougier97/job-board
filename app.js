@@ -5,7 +5,7 @@
   const REPLY_STATES=["replied","interview","offer","started"];
   const LABEL={new:"New",applied:"Applied",replied:"Replied",interview:"Interview",offer:"Offer",started:"Started",rejected:"Not this time",dismissed:"Not for me",closed:"Closed"};
   const KEY="plan.status.v1";
-  let jobs=[], dealers=[], explore=[], meta=null, exFilter="All", loaded=false, failed=false;
+  let jobs=[], dealers=[], explore=[], mail=[], meta=null, exFilter="All", loaded=false, failed=false;
   let local={}; try{local=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(_){local={};}
   const view=document.getElementById("view");
 
@@ -61,6 +61,7 @@
       <h3>${esc(j.title)}</h3>
       <div class="meta">${esc(j.company)}${j.town?" · "+esc(j.town):""}${applied?" · applied "+fmtDate(applied):""}</div>
       ${chips.length?`<div class="chips">${chips.join("")}</div>`:""}
+      ${mailLine(j.id)}
       ${j.fit?`<div class="fit">${esc(j.fit)}</div>`:""}
       ${j.replyNote?`<div class="fit"><b>Reply:</b> ${esc(j.replyNote)}</div>`:""}
       ${j.contact?`<div class="meta">Contact: ${esc(j.contact)}</div>`:""}
@@ -87,6 +88,7 @@
       <h3>${esc(x.title)}</h3>
       <div class="meta">${esc(x.company)} · ${esc(x.town)}${applied?" · applied "+fmtDate(applied):""}</div>
       <div class="chips"><span class="chip pay">${esc(x.pay)}</span><span class="chip">${esc(x.category)}</span>${x.driveMins?`<span class="chip">${esc(x.driveMins)} min drive</span>`:""}${x.closes&&s==="new"?`<span class="chip warn">Closes ${fmtDate(x.closes)}</span>`:""}${x.checked?`<span class="chip good">✓ Live, checked ${ago(x.checked)}</span>`:""}${statusChip}</div>
+      ${mailLine(x.id)}
       ${x.why?`<div class="fit">${esc(x.why)}</div>`:""}
       ${actions}
     </article>`;
@@ -99,6 +101,7 @@
       <h3>${esc(g.title)}</h3>
       <div class="meta">${esc(g.company)}${g.town?" · "+esc(g.town):""}${applied?" · applied "+fmtDate(applied):""}</div>
       <div class="chips">${g.pay?`<span class="chip">${esc(g.pay)}</span>`:""}<span class="chip">No longer advertised</span><span class="chip">${esc(LABEL[s]||s)}</span></div>
+      ${mailLine(g.id)}
       <div class="fit">The advert has been taken down, but your application still counts. Keep updating its status if they get back to you.</div>
       <div class="actions"><label class="meta" for="sel-${id}">Status</label><select id="sel-${id}" data-status="${id}">${opts}</select><button class="btn" data-cv="${esc(cv)}" data-name="${esc(nm)}">Save CV I sent</button></div>
     </article>`;
@@ -157,7 +160,7 @@
     }else if(tab==="applied"){
       h+=`<div class="sectionhead"><h2>Applied</h2><small>${applied.length}</small></div>`+listAny(applied,"Nothing yet. When you come back from an apply page, PLAN asks if you applied and moves the job here.");
     }else if(tab==="replies"){
-      h+=`<div class="sectionhead"><h2>Replies &amp; interviews</h2><small>${live} active</small></div>`+listAny(replies,"No replies yet. When a dealer gets back to you, open the job in Applied and change its status.");
+      h+=`<div class="sectionhead"><h2>Replies &amp; interviews</h2><small>${live} active</small></div>`+listAny(replies,"No replies yet. PLAN checks your inbox every hour and moves jobs here when an employer emails you.");
     }else if(tab==="dealers"){
       h+=`<div class="sectionhead"><h2>Dealers watched</h2><small>${dealers.length}</small></div><p class="meta">Every dealer PLAN checks for you. The green tag shows how many jobs that dealer is advertising right now that suit you. Those jobs are in your New tab. "No jobs right now" just means nothing suitable is advertised today; you can still approach them directly.</p>`;
       const g={};dealers.forEach(d=>{const a=AREAS.includes(d.area)?d.area:"Other";(g[a]=g[a]||[]).push(d);});
@@ -170,6 +173,23 @@
     view.innerHTML=h;
   }
 
+  // Email replies spotted by PLAN's hourly inbox check (data/replies.json holds only job id, type and date, never email text).
+  const MAIL_TEXT={ack:"Application received",reply:"They replied, check your email",interview:"Interview invite, check your email",offer:"Offer, check your email",rejected:"Not taken forward this time"};
+  function mailFor(id){return mail.filter(m=>m.id===id).sort((a,b)=>String(b.date).localeCompare(String(a.date)))[0];}
+  function mailLine(id){const m=mailFor(id);if(!m)return "";return `<div class="fit"><b>📧 Inbox:</b> ${esc(MAIL_TEXT[m.kind]||"Email from employer")}${m.from?" from "+esc(m.from):""} · ${fmtDate(m.date)}</div>`;}
+  const RANK={new:0,applied:1,replied:2,interview:3,offer:4,started:5};
+  const KIND_TO={ack:"applied",reply:"replied",interview:"interview",offer:"offer",rejected:"rejected"};
+  function applyMail(){
+    let changed=[];const seen=local.__mail||(local.__mail={});
+    mail.forEach(m=>{const key=m.id+"|"+m.kind+"|"+m.date;if(seen[key])return;seen[key]=1;
+      const to=KIND_TO[m.kind];if(!to)return;const it=findItem(m.id);const cur=(local[m.id]&&local[m.id].status)||(it&&it.status)||"new";
+      if(cur==="started"||cur==="closed")return;
+      const up=to==="rejected"?(cur!=="rejected"):(cur==="rejected"?false:(RANK[to]>(RANK[cur]||0)));
+      if(!up)return;const rec=local[m.id]||{};rec.status=to;if(!rec.appliedOn)rec.appliedOn=String(m.date).slice(0,10);
+      if(it)rec.snap=snapOf(it);local[m.id]=rec;changed.push(m);});
+    save();
+    if(changed.length){const m=changed[0];toast(changed.length>1?`${changed.length} employer emails, check Replies`:`📧 ${m.from||"Employer"}: ${MAIL_TEXT[m.kind]||"emailed you"}`);}
+  }
   const TRACKED=["applied","replied","interview","offer","started","rejected"];
   function snapOf(it){if(!it)return null;const o={};["title","company","town","pay","link","applyUrl","category","type","driveMins"].forEach(k=>{if(it[k]!=null)o[k]=it[k];});
     o.cvHref=it.category?"cvs/base.pdf":(it.cv?`cvs/${safeId(it.id)}.pdf`:"cvs/base.pdf");return o;}
@@ -238,8 +258,10 @@
     const v="?t="+Date.now();
     try{
       const [a,b,c,x]=await Promise.all(["data/jobs.json","data/dealers.json","data/meta.json","data/explore.json"].map(u=>fetch(u+v,{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json();})));
+      try{const r=await fetch("data/replies.json"+v,{cache:"no-store"});mail=r.ok?await r.json():[];if(!Array.isArray(mail))mail=[];}catch(_){mail=[];}
       jobs=Array.isArray(a)?a:[];dealers=Array.isArray(b)?b:[];meta=c||null;explore=Array.isArray(x)?x:[];failed=false;
       const stamp=(meta&&meta.lastScan)||"";if(lastStamp&&stamp!==lastStamp&&!manual)toast("PLAN just updated");lastStamp=stamp;
+      applyMail();
     }catch(_){failed=true;}
     loaded=true;render();
   }
