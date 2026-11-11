@@ -1,11 +1,11 @@
 (function(){
   "use strict";
-  const TABS=["new","applied","replies","dealers","playbook"];
+  const TABS=["new","explore","applied","replies","dealers","playbook"];
   const AREAS=["Bedford","Luton","Northampton","Milton Keynes"];
   const REPLY_STATES=["replied","interview","offer","started"];
   const LABEL={new:"New",applied:"Applied",replied:"Replied",interview:"Interview",offer:"Offer",started:"Started",rejected:"Not this time",dismissed:"Not for me"};
   const KEY="plan.status.v1";
-  let jobs=[], dealers=[], meta=null, loaded=false, failed=false;
+  let jobs=[], dealers=[], explore=[], meta=null, exFilter="All", loaded=false, failed=false;
   let local={}; try{local=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(_){local={};}
   const view=document.getElementById("view");
 
@@ -31,6 +31,7 @@
     if(j.noExperienceOk)chips.push(`<span class="chip good">No experience needed</span>`);
     if(j.driveMins)chips.push(`<span class="chip">${esc(j.driveMins)} min drive</span>`);
     if(j.found)chips.push(`<span class="chip">Found ${fmtDate(j.found)}</span>`);
+    if(j.checked)chips.push(`<span class="chip good">✓ Link checked ${fmtDate(j.checked)}</span>`);
     if(s!=="new")chips.push(`<span class="chip ${s==="rejected"?"bad":(REPLY_STATES.includes(s)?"good":"")}">${esc(LABEL[s]||s)}</span>`);
     const link=safeUrl(j.link), apply=safeUrl(j.applyUrl)||(j.applyEmail?"":link);
     const email=/^[^\s@<>"]+@[^\s@<>"]+\.[a-z]{2,}$/i.test(String(j.applyEmail||""));
@@ -66,6 +67,16 @@
       ${j.cover?`<details><summary>Cover message</summary><div class="cover">${esc(j.cover)}</div></details>`:""}
     </article>`;
   }
+  function exCard(x){
+    const link=safeUrl(x.link);
+    return `<article class="card ${x.category==="Digital marketing"?"spec":"vacancy"}">
+      <h3>${esc(x.title)}</h3>
+      <div class="meta">${esc(x.company)} · ${esc(x.town)}</div>
+      <div class="chips"><span class="chip pay">${esc(x.pay)}</span><span class="chip">${esc(x.category)}</span>${x.driveMins?`<span class="chip">${esc(x.driveMins)} min drive</span>`:""}${x.closes?`<span class="chip warn">Closes ${fmtDate(x.closes)}</span>`:""}${x.checked?`<span class="chip good">✓ Link checked ${fmtDate(x.checked)}</span>`:""}</div>
+      ${x.why?`<div class="fit">${esc(x.why)}</div>`:""}
+      <div class="actions">${link?`<a class="btn primary" href="${esc(link)}" target="_blank" rel="noopener">Open job &amp; apply</a>`:""}<a class="btn cv" href="cvs/base.pdf" download="Rougier_Williams_CV.pdf">Download my CV</a></div>
+    </article>`;
+  }
   function list(a,msg){return a.length?a.map(card).join(""):`<div class="empty">${msg}</div>`;}
   const byFound=(a,b)=>String(b.found||"").localeCompare(String(a.found||""));
 
@@ -98,6 +109,16 @@
     if(tab==="new"){
       h+=`<div class="sectionhead"><h2>Apply now</h2><small>${vac.length} live</small></div>`+list(vac,"No new vacancies. Next check at 6:31am or 5:31pm.");
       h+=`<div class="sectionhead"><h2>Ask directly</h2><small>${spec.length}</small></div>`+list(spec,"No direct approaches waiting.");
+    }else if(tab==="explore"){
+      const today=new Date().toISOString().slice(0,10);
+      const live=explore.filter(x=>!x.closes||x.closes>=today);
+      const cats=["All",...new Set(live.map(x=>x.category))];
+      if(!cats.includes(exFilter))exFilter="All";
+      const shown=live.filter(x=>exFilter==="All"||x.category===exFilter);
+      h+=`<div class="sectionhead"><h2>Explore</h2><small>${shown.length} vacancies</small></div>
+      <p class="meta">Other jobs near you in your pay range: sales trainee, digital marketing and other well-paid trainee roles. Every link is tested before each update.</p>
+      <div class="chips">${cats.map(c=>`<button class="btn${c===exFilter?" primary":""}" data-filter="${esc(c)}">${esc(c)}</button>`).join("")}</div>`;
+      h+=shown.length?shown.map(exCard).join(""):`<div class="empty">Nothing in this group right now.</div>`;
     }else if(tab==="applied"){
       h+=`<div class="sectionhead"><h2>Applied</h2><small>${applied.length}</small></div>`+list(applied,"Nothing yet. Tap “I applied” on a job and it moves here.");
     }else if(tab==="replies"){
@@ -129,6 +150,7 @@
     const c=e.target.closest("[data-copy]");
     if(c){const j=jobs.find(x=>x.id===c.dataset.copy);if(!j)return;
       (navigator.clipboard?navigator.clipboard.writeText(j.cover):Promise.reject()).then(()=>toast("Message copied")).catch(()=>toast("Open “Cover message” and copy it"));return;}
+    const f=e.target.closest("[data-filter]");if(f){exFilter=f.dataset.filter;render();return;}
     const p=e.target.closest("[data-prep]");if(p){const j=jobs.find(x=>x.id===p.dataset.prep);if(j)openSheet(`Prep: ${j.company}`,`<div class="prep">${esc(j.prep)}</div>`);return;}
     const s=e.target.closest("[data-set]");if(s)setStatus(s.dataset.id,s.dataset.set);
   });
@@ -139,8 +161,8 @@
   async function load(){
     const v="?t="+Date.now();
     try{
-      const [a,b,c]=await Promise.all(["data/jobs.json","data/dealers.json","data/meta.json"].map(u=>fetch(u+v,{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json();})));
-      jobs=Array.isArray(a)?a:[];dealers=Array.isArray(b)?b:[];meta=c||null;failed=false;
+      const [a,b,c,x]=await Promise.all(["data/jobs.json","data/dealers.json","data/meta.json","data/explore.json"].map(u=>fetch(u+v,{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json();})));
+      jobs=Array.isArray(a)?a:[];dealers=Array.isArray(b)?b:[];meta=c||null;explore=Array.isArray(x)?x:[];failed=false;
     }catch(_){failed=true;}
     loaded=true;render();
   }

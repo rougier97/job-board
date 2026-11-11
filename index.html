@@ -87,7 +87,7 @@ select{font:500 14px var(--body);padding:8px;border-radius:10px;border:1px solid
 .play h3{font:700 18px var(--display);text-transform:uppercase;margin:0 0 6px}
 .play p,.play li{max-width:65ch}
 .play ul,.play ol{padding-left:20px;margin:6px 0}
-nav{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding-bottom:env(safe-area-inset-bottom)}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(6,1fr);padding-bottom:env(safe-area-inset-bottom)}
 nav button{appearance:none;background:none;border:0;color:var(--muted);font:600 11px var(--body);padding:10px 2px 9px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;position:relative}
 nav button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8}
 nav button[aria-current="page"]{color:var(--accent)}
@@ -142,6 +142,7 @@ nav .badge{position:absolute;top:5px;left:calc(50% + 6px);background:var(--accen
 </div>
 <nav aria-label="Sections">
   <button id="tab-new" data-tab="new"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>New<span class="badge" id="b-new" hidden></span></button>
+  <button id="tab-explore" data-tab="explore"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>Explore</button>
   <button id="tab-applied" data-tab="applied"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Applied</button>
   <button id="tab-replies" data-tab="replies"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg>Replies<span class="badge" id="b-replies" hidden></span></button>
   <button id="tab-dealers" data-tab="dealers"><svg viewBox="0 0 24 24"><path d="M3 11l2-5h14l2 5v6H3z"/><circle cx="7.5" cy="17" r="1.6"/><circle cx="16.5" cy="17" r="1.6"/></svg>Dealers</button>
