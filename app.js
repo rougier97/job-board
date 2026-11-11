@@ -91,7 +91,19 @@
       ${actions}
     </article>`;
   }
-  function anyCard(i){return i.category?exCard(i):card(i);}
+  function goneCard(g){
+    const s=st(g), id=esc(g.id), applied=local[g.id]&&local[g.id].appliedOn;
+    const opts=["applied","replied","interview","offer","started","rejected"].map(o=>`<option value="${o}"${o===s?" selected":""}>${LABEL[o]}</option>`).join("");
+    const cv=g.cvHref||"cvs/base.pdf", nm=`Rougier_Williams_CV_${String(g.company||"").replace(/[^A-Za-z0-9]+/g,"_")}.pdf`;
+    return `<article class="card gone">
+      <h3>${esc(g.title)}</h3>
+      <div class="meta">${esc(g.company)}${g.town?" · "+esc(g.town):""}${applied?" · applied "+fmtDate(applied):""}</div>
+      <div class="chips">${g.pay?`<span class="chip">${esc(g.pay)}</span>`:""}<span class="chip">No longer advertised</span><span class="chip">${esc(LABEL[s]||s)}</span></div>
+      <div class="fit">The advert has been taken down, but your application still counts. Keep updating its status if they get back to you.</div>
+      <div class="actions"><label class="meta" for="sel-${id}">Status</label><select id="sel-${id}" data-status="${id}">${opts}</select><button class="btn" data-cv="${esc(cv)}" data-name="${esc(nm)}">Save CV I sent</button></div>
+    </article>`;
+  }
+  function anyCard(i){return i._gone?goneCard(i):i.category?exCard(i):card(i);}
   function listAny(a,msg){return a.length?a.map(anyCard).join(""):`<div class="empty">${msg}</div>`;}
   function list(a,msg){return a.length?a.map(card).join(""):`<div class="empty">${msg}</div>`;}
   const byFound=(a,b)=>String(b.found||"").localeCompare(String(a.found||""));
@@ -102,9 +114,14 @@
     TABS.forEach(t=>{const b=document.getElementById("tab-"+t);if(t===tab)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
     const nw=jobs.filter(j=>st(j)==="new"&&fresh(j));
     const vac=nw.filter(j=>j.type!=="speculative").sort(byFound), spec=nw.filter(j=>j.type==="speculative").sort(byFound);
-    const all=jobs.concat(explore);
-    const applied=all.filter(j=>st(j)==="applied");
-    const replies=all.filter(j=>REPLY_STATES.includes(st(j))||st(j)==="rejected");
+    // Applied and Replies come from your saved progress, so jobs stay even after the advert is taken down.
+    const tracked=Object.keys(local).filter(id=>TRACKED.includes(local[id].status)).map(id=>{
+      const it=jobs.find(x=>x.id===id)||explore.find(x=>x.id===id);
+      if(it&&fresh(it))return it;
+      return Object.assign({id},local[id].snap||{title:"Saved job",company:""},{_gone:true});
+    }).sort((a,b)=>String((local[b.id]||{}).appliedOn||"").localeCompare(String((local[a.id]||{}).appliedOn||"")));
+    const applied=tracked.filter(j=>st(j)==="applied");
+    const replies=tracked.filter(j=>REPLY_STATES.includes(st(j))||st(j)==="rejected");
     const live=replies.filter(j=>st(j)!=="rejected").length;
     document.getElementById("s-new").textContent=nw.length;
     document.getElementById("s-applied").textContent=applied.length;
@@ -121,7 +138,7 @@
     if(jobs.some(j=>st(j)==="started"))b+="You're in the new job. Nice work.";
     else if(iv)b+=`You have ${iv} interview${iv>1?"s":""} lined up. Open Replies for your prep.`;
     else if(vac.length)b+=`${vac.length} job${vac.length>1?"s are":" is"} ready${noExp?`, ${noExp} with no experience needed`:""}. Save the tailored CV, copy the message, then apply.`;
-    else b+="Nothing new right now. I check every dealer again at 6:31am and 5:31pm.";
+    else b+="Nothing new right now. I check again every hour.";
     document.getElementById("brief").textContent=b;
     let h="";
     if(tab==="new"){
@@ -153,9 +170,13 @@
     view.innerHTML=h;
   }
 
+  const TRACKED=["applied","replied","interview","offer","started","rejected"];
+  function snapOf(it){if(!it)return null;const o={};["title","company","town","pay","link","applyUrl","category","type","driveMins"].forEach(k=>{if(it[k]!=null)o[k]=it[k];});
+    o.cvHref=it.category?"cvs/base.pdf":(it.cv?`cvs/${safeId(it.id)}.pdf`:"cvs/base.pdf");return o;}
   function setStatus(id,s){
     const cur=local[id]||{};if(cur.status===s)return;
     cur.status=s;if(s==="applied"&&!cur.appliedOn)cur.appliedOn=new Date().toISOString().slice(0,10);
+    if(TRACKED.includes(s)){const it=jobs.find(x=>x.id===id)||explore.find(x=>x.id===id);if(it)cur.snap=snapOf(it);}
     local[id]=cur;save();render();toast(s==="closed"?"Removed. Thanks, it won't show again":s==="dismissed"?"Hidden":s==="new"?"Moved back":"Moved to "+(LABEL[s]||s));
   }
   const sheet=document.getElementById("sheet");
@@ -238,5 +259,6 @@
       if(pull>=TRIGGER){busy=true;set(44,"Checking for updates…");await load(true);set(44,"Up to date");setTimeout(()=>{set(0,"");busy=false;},700);}else set(0,"");pull=0;});
   })();
 
+  try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist();}catch(_){}
   render();load();
 })();
