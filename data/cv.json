@@ -1,0 +1,49 @@
+{
+  "name": "Rougier Devonte Williams",
+  "location": "Bedford, UK",
+  "phone": "07407433797",
+  "email": "Rougier536@gmail.com",
+  "profile": [
+    "Ambitious and customer-focused automotive professional with hands-on experience at BCA, developing practical expertise in vehicle handling, dealership drop-offs, MOT and service movements, vehicle testing, polishing and customer handovers. Experienced working around a wide range of premium and performance vehicles, including Mercedes-AMG, Ferrari, McLaren, Aston Martin, Porsche, Maserati, Bentley, Range Rover, Jaguar, Lotus, Audi RS and BMW M models.",
+    "Alongside my automotive experience, I have a strong background in high-value sales and business development. At Curve Media, I sold premium promotional packages through cold calling, targeted email outreach and direct prospecting, building relationships with decision-makers including artist and football representatives and business owners. This developed my confidence, persistence, commercial awareness and ability to identify and convert sales opportunities.",
+    "I am now looking to expand my skill set and progress into automotive sales. I am ambitious to develop my knowledge of vehicles, finance, customer experience and the complete sales process while learning from experienced professionals and building a long-term career within the automotive industry."
+  ],
+  "skills": ["Automotive customer service", "High-value sales & business development", "Cold calling & email prospecting", "Customer handovers", "Dealership communication", "Vehicle presentation & preparation", "Relationship building", "Commercial communication", "Professionalism & attention to detail"],
+  "experience": [
+    {"company": "BCA", "role": "Vehicle Handling / Automotive Operations", "location": "Bedford", "dates": "February 2026 – Present", "bullets": [
+      "Complete dealership drop-offs and collections, communicating directly with dealership personnel in professional automotive environments.",
+      "Carry out MOT and service-related vehicle movements and support customer handovers on site.",
+      "Prepare vehicles through polishing, presentation work and vehicle checks before onward movement or customer/dealership interaction.",
+      "Drive and manoeuvre a wide range of vehicles responsibly using trade plates.",
+      "Work confidently around premium and performance vehicles, including Mercedes-AMG, Ferrari, McLaren, Aston Martin, Porsche, Maserati, Bentley, Range Rover, Jaguar, Lotus, Audi RS and BMW M models.",
+      "Maintain a professional, customer-focused approach when representing the business on site."]},
+    {"company": "Stafford Doors", "role": "Specialist Door Manufacturing", "location": "", "dates": "October 2025 – January 2026", "bullets": [
+      "Manufactured specialist fire-resistant and bullet-resistant doors for high-value customers nationwide.",
+      "Used professional carpentry power tools safely and accurately while working to strict quality standards.",
+      "Worked with specialist materials where precision, reliability and attention to detail were essential.",
+      "Contributed effectively within a team and maintained professional standards throughout production."]},
+    {"company": "Curve Media", "role": "Sales / Advertising", "location": "", "dates": "September 2023 – January 2025", "bullets": [
+      "Generated new business through cold calling, targeted email campaigns and proactive direct outreach.",
+      "Sold premium promotional packages and communicated their value to prospective clients.",
+      "Built relationships with decision-makers including artist and football representatives and business owners.",
+      "Managed prospects through the sales process, from initial contact and needs discovery through to conversion.",
+      "Developed strong commercial communication, objection handling, persistence and relationship-building skills."]},
+    {"company": "Vision Modular Systems", "role": "Previous Employment", "location": "", "dates": "", "bullets": [
+      "Worked in a professional manufacturing and construction environment, following procedures and quality standards.",
+      "Developed practical problem-solving, teamwork, reliability and time-management skills."]},
+    {"company": "Dunbia", "role": "Previous Employment", "location": "", "dates": "", "bullets": [
+      "Worked in a fast-paced professional environment where reliability, teamwork and maintaining standards were essential.",
+      "Built discipline, consistency and the ability to perform effectively under pressure."]},
+    {"company": "Toby Carvery", "role": "Previous Employment", "location": "", "dates": "", "bullets": [
+      "Worked in a customer-facing hospitality environment, developing communication and customer-service skills.",
+      "Maintained professional standards while working as part of a busy team."]}
+  ],
+  "education": [
+    {"name": "BTEC", "detail": "Business Studies; Sports Science; Creative Media"},
+    {"name": "Level 1 Plumbing", "detail": "Level 1 Plumbing qualification"},
+    {"name": "GCSEs", "detail": "English – Grade 5; Mathematics – Grade 4; Science – Grade 4"},
+    {"name": "Driving licence", "detail": "Full UK driving licence"}
+  ],
+  "objective": "To develop a long-term career in automotive sales by combining my existing vehicle-handling and customer-facing experience with my background in proactive, high-value sales. I am keen to learn, expand my skill set and progress within a professional automotive retail environment.",
+  "references": "Available upon request."
+}

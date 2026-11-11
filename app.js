@@ -1,0 +1,150 @@
+(function(){
+  "use strict";
+  const TABS=["new","applied","replies","dealers","playbook"];
+  const AREAS=["Bedford","Luton","Northampton","Milton Keynes"];
+  const REPLY_STATES=["replied","interview","offer","started"];
+  const LABEL={new:"New",applied:"Applied",replied:"Replied",interview:"Interview",offer:"Offer",started:"Started",rejected:"Not this time",dismissed:"Not for me"};
+  const KEY="plan.status.v1";
+  let jobs=[], dealers=[], meta=null, loaded=false, failed=false;
+  let local={}; try{local=JSON.parse(localStorage.getItem(KEY)||"{}")||{};}catch(_){local={};}
+  const view=document.getElementById("view");
+
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(local));}catch(_){}}
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+  function safeUrl(u){u=String(u||"");return /^https?:\/\//i.test(u)?u:"";}
+  function safeId(s){return String(s||"").toLowerCase().replace(/[^a-z0-9-]/g,"");}
+  function toast(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("show");clearTimeout(toast._t);toast._t=setTimeout(()=>t.classList.remove("show"),1900);}
+  function fmtDate(s){if(!s)return"";const d=new Date(s);return isNaN(d)?esc(s):d.toLocaleDateString("en-GB",{day:"numeric",month:"short"});}
+  function current(){const h=(location.hash||"").slice(1);return TABS.includes(h)?h:"new";}
+  function st(j){return (local[j.id]&&local[j.id].status)||j.status||"new";}
+  function mailto(j){
+    const body=(j.cover||"")+(/cv is attached/i.test(j.cover||"")?"":"\n\nMy CV is attached.");
+    return `mailto:${encodeURIComponent(j.applyEmail)}?subject=${encodeURIComponent("Application: "+j.title+" – Rougier Williams")}&body=${encodeURIComponent(body)}`;
+  }
+
+  function card(j){
+    const s=st(j), id=esc(j.id);
+    const kind=j.type==="speculative"?"spec":(REPLY_STATES.includes(s)?"replied":"vacancy");
+    const chips=[];
+    if(j.pay)chips.push(`<span class="chip pay">${esc(j.pay)}</span>`);
+    if(j.type==="speculative")chips.push(`<span class="chip warn">Ask directly</span>`);
+    if(j.noExperienceOk)chips.push(`<span class="chip good">No experience needed</span>`);
+    if(j.driveMins)chips.push(`<span class="chip">${esc(j.driveMins)} min drive</span>`);
+    if(j.found)chips.push(`<span class="chip">Found ${fmtDate(j.found)}</span>`);
+    if(s!=="new")chips.push(`<span class="chip ${s==="rejected"?"bad":(REPLY_STATES.includes(s)?"good":"")}">${esc(LABEL[s]||s)}</span>`);
+    const link=safeUrl(j.link), apply=safeUrl(j.applyUrl)||(j.applyEmail?"":link);
+    const email=/^[^\s@<>"]+@[^\s@<>"]+\.[a-z]{2,}$/i.test(String(j.applyEmail||""));
+    const cvHref=j.cv?`cvs/${safeId(j.id)}.pdf`:"cvs/base.pdf";
+    const cvName=`Rougier_Williams_CV_${String(j.company).replace(/[^A-Za-z0-9]+/g,"_")}.pdf`;
+    let a1="", a2="";
+    if(s==="new"){
+      a1=`${apply?`<a class="btn primary" href="${esc(apply)}" target="_blank" rel="noopener">${j.type==="speculative"?"Open careers page":"Go to apply page"}</a>`:""}
+        ${email?`<a class="btn primary" href="${esc(mailto(j))}">Email my application</a>`:""}
+        ${link&&link!==apply?`<a class="btn" href="${esc(link)}" target="_blank" rel="noopener">View listing</a>`:""}
+        ${j.cover?`<button class="btn" data-copy="${id}">Copy message</button>`:""}`;
+      a2=`<a class="btn cv" href="${esc(cvHref)}" download="${esc(cvName)}">${j.cv?"Download CV tailored for this job":"Download my CV"}</a>
+        <button class="btn" data-set="applied" data-id="${id}">I applied</button>
+        <button class="btn" data-set="dismissed" data-id="${id}">Not for me</button>`;
+    }else{
+      const opts=["applied","replied","interview","offer","started","rejected","new"].map(o=>`<option value="${o}"${o===s?" selected":""}>${o==="new"?"Move back to New":LABEL[o]}</option>`).join("");
+      a1=`<label class="meta" for="sel-${id}">Status</label><select id="sel-${id}" data-status="${id}">${opts}</select>
+        ${link?`<a class="btn" href="${esc(link)}" target="_blank" rel="noopener">Open listing</a>`:""}`;
+      a2=`<a class="btn cv" href="${esc(cvHref)}" download="${esc(cvName)}">CV I sent</a>${j.prep?`<button class="btn" data-prep="${id}">Interview prep</button>`:""}`;
+    }
+    const applied=local[j.id]&&local[j.id].appliedOn;
+    return `<article class="card ${kind}">
+      <h3>${esc(j.title)}</h3>
+      <div class="meta">${esc(j.company)}${j.town?" · "+esc(j.town):""}${applied?" · applied "+fmtDate(applied):""}</div>
+      ${chips.length?`<div class="chips">${chips.join("")}</div>`:""}
+      ${j.fit?`<div class="fit">${esc(j.fit)}</div>`:""}
+      ${j.replyNote?`<div class="fit"><b>Reply:</b> ${esc(j.replyNote)}</div>`:""}
+      ${j.contact?`<div class="meta">Contact: ${esc(j.contact)}</div>`:""}
+      ${email?`<div class="meta">Apply by email: ${esc(j.applyEmail)}</div>`:""}
+      <div class="actions">${a1}</div>
+      <div class="actions">${a2}</div>
+      ${j.cv&&j.cv.changes?`<details><summary>How your CV was tailored</summary><ul class="cover">${j.cv.changes.map(c=>`<li>${esc(c)}</li>`).join("")}</ul></details>`:""}
+      ${j.cover?`<details><summary>Cover message</summary><div class="cover">${esc(j.cover)}</div></details>`:""}
+    </article>`;
+  }
+  function list(a,msg){return a.length?a.map(card).join(""):`<div class="empty">${msg}</div>`;}
+  const byFound=(a,b)=>String(b.found||"").localeCompare(String(a.found||""));
+
+  function render(){
+    const tab=current();
+    TABS.forEach(t=>{const b=document.getElementById("tab-"+t);if(t===tab)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
+    const nw=jobs.filter(j=>st(j)==="new");
+    const vac=nw.filter(j=>j.type!=="speculative").sort(byFound), spec=nw.filter(j=>j.type==="speculative").sort(byFound);
+    const applied=jobs.filter(j=>st(j)==="applied");
+    const replies=jobs.filter(j=>REPLY_STATES.includes(st(j))||st(j)==="rejected");
+    const live=replies.filter(j=>st(j)!=="rejected").length;
+    document.getElementById("s-new").textContent=nw.length;
+    document.getElementById("s-applied").textContent=applied.length;
+    document.getElementById("s-replies").textContent=live;
+    document.getElementById("s-dealers").textContent=dealers.length;
+    const bn=document.getElementById("b-new");bn.hidden=!nw.length;bn.textContent=nw.length;
+    const br=document.getElementById("b-replies");br.hidden=!live;br.textContent=live;
+    if(meta&&meta.lastScan)document.getElementById("scanline").textContent=`Last checked ${fmtDate(meta.lastScan)} · ${meta.lastSummary||""}`;
+    if(failed&&!jobs.length){view.innerHTML=`<div class="notice">Can't load your jobs right now. Check your signal and pull down to refresh.</div>`;return;}
+    if(!loaded)return;
+    const hr=new Date().getHours(), hi=hr<12?"Morning":hr<18?"Afternoon":"Evening";
+    const noExp=vac.filter(j=>j.noExperienceOk).length, iv=replies.filter(j=>st(j)==="interview").length;
+    let b=`${hi}, Rougier. `;
+    if(jobs.some(j=>st(j)==="started"))b+="You're in the new job. Nice work.";
+    else if(iv)b+=`You have ${iv} interview${iv>1?"s":""} lined up. Open Replies for your prep.`;
+    else if(vac.length)b+=`${vac.length} job${vac.length>1?"s are":" is"} ready${noExp?`, ${noExp} with no experience needed`:""}. Download the tailored CV, copy the message, then apply.`;
+    else b+="Nothing new right now. I check every dealer again at 6:31am and 5:31pm.";
+    document.getElementById("brief").textContent=b;
+    let h="";
+    if(tab==="new"){
+      h+=`<div class="sectionhead"><h2>Apply now</h2><small>${vac.length} live</small></div>`+list(vac,"No new vacancies. Next check at 6:31am or 5:31pm.");
+      h+=`<div class="sectionhead"><h2>Ask directly</h2><small>${spec.length}</small></div>`+list(spec,"No direct approaches waiting.");
+    }else if(tab==="applied"){
+      h+=`<div class="sectionhead"><h2>Applied</h2><small>${applied.length}</small></div>`+list(applied,"Nothing yet. Tap “I applied” on a job and it moves here.");
+    }else if(tab==="replies"){
+      h+=`<div class="sectionhead"><h2>Replies &amp; interviews</h2><small>${live} active</small></div>`+list(replies,"No replies yet. When a dealer gets back to you, open the job in Applied and change its status.");
+    }else if(tab==="dealers"){
+      h+=`<div class="sectionhead"><h2>Dealers watched</h2><small>${dealers.length}</small></div>`;
+      const g={};dealers.forEach(d=>{const a=AREAS.includes(d.area)?d.area:"Other";(g[a]=g[a]||[]).push(d);});
+      [...AREAS,"Other"].forEach(a=>{const ds=g[a];if(!ds)return;ds.sort((x,y)=>(y.openRoles||0)-(x.openRoles||0)||String(x.name).localeCompare(String(y.name)));
+        h+=`<div class="area"><h3>${esc(a)}</h3>`+ds.map(d=>{const u=safeUrl(d.careersUrl),n=d.openRoles||0;
+          return `<div class="dealer"><span class="n">${esc(d.name)}</span><span class="chip ${n?"good":""}">${n?n+" open":"No openings"}</span>
+          <span class="m">${esc(d.group||"Independent")}${d.lastChecked?" · checked "+fmtDate(d.lastChecked):""}${d.note?" · "+esc(d.note):""}</span>
+          ${u?`<a href="${esc(u)}" target="_blank" rel="noopener">Careers page</a>`:""}</div>`;}).join("")+`</div>`;});
+    }else h+=document.getElementById("playbook").innerHTML;
+    view.innerHTML=h;
+  }
+
+  function setStatus(id,s){
+    const cur=local[id]||{};if(cur.status===s)return;
+    cur.status=s;if(s==="applied"&&!cur.appliedOn)cur.appliedOn=new Date().toISOString().slice(0,10);
+    local[id]=cur;save();render();toast(s==="dismissed"?"Hidden":s==="new"?"Back in New":"Moved to "+(LABEL[s]||s));
+  }
+  const sheet=document.getElementById("sheet");
+  function openSheet(t,body){document.getElementById("sheet-title").textContent=t;document.getElementById("sheet-body").innerHTML=body;sheet.classList.add("open");document.getElementById("sheet-close").focus();}
+  document.getElementById("sheet-close").addEventListener("click",()=>sheet.classList.remove("open"));
+  sheet.addEventListener("click",e=>{if(e.target===sheet)sheet.classList.remove("open");});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")sheet.classList.remove("open");});
+
+  view.addEventListener("click",e=>{
+    const c=e.target.closest("[data-copy]");
+    if(c){const j=jobs.find(x=>x.id===c.dataset.copy);if(!j)return;
+      (navigator.clipboard?navigator.clipboard.writeText(j.cover):Promise.reject()).then(()=>toast("Message copied")).catch(()=>toast("Open “Cover message” and copy it"));return;}
+    const p=e.target.closest("[data-prep]");if(p){const j=jobs.find(x=>x.id===p.dataset.prep);if(j)openSheet(`Prep: ${j.company}`,`<div class="prep">${esc(j.prep)}</div>`);return;}
+    const s=e.target.closest("[data-set]");if(s)setStatus(s.dataset.id,s.dataset.set);
+  });
+  view.addEventListener("change",e=>{const s=e.target.closest("[data-status]");if(s)setStatus(s.dataset.status,s.value);});
+  document.querySelector("nav").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(!b)return;location.hash=b.dataset.tab;window.scrollTo(0,0);});
+  window.addEventListener("hashchange",render);
+
+  async function load(){
+    const v="?t="+Date.now();
+    try{
+      const [a,b,c]=await Promise.all(["data/jobs.json","data/dealers.json","data/meta.json"].map(u=>fetch(u+v,{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json();})));
+      jobs=Array.isArray(a)?a:[];dealers=Array.isArray(b)?b:[];meta=c||null;failed=false;
+    }catch(_){failed=true;}
+    loaded=true;render();
+  }
+  document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")load();});
+  document.getElementById("refresh").addEventListener("click",()=>{load().then(()=>toast("Up to date"));});
+  render();load();
+})();

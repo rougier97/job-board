@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PLAN</title>
+<meta name="theme-color" content="#14181f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="PLAN">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: phone-first stack, summary strip on top, card list per section, tab bar fixed at the bottom. */
+:root{
+  --bg:#f3f4f6; --surface:#ffffff; --ink:#14181f; --muted:#5b6472; --line:#dde1e7;
+  --accent:#d9480f; --accent-ink:#ffffff; --accent-soft:#fdebe2;
+  --good:#1e7a46; --good-soft:#e3f3ea; --warn:#9a6700; --warn-soft:#fbf1d6; --bad:#b42318; --bad-soft:#fbe6e4;
+  --display:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --body:"IBM Plex Sans", -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1217; --surface:#181c23; --ink:#eef0f3; --muted:#9aa3b0; --line:#2a303a;
+    --accent:#ff7a3d; --accent-ink:#1a0d05; --accent-soft:#3a2117;
+    --good:#5fd08e; --good-soft:#15301f; --warn:#e8b54a; --warn-soft:#33290f; --bad:#ff8a7e; --bad-soft:#3a1b18;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1217; --surface:#181c23; --ink:#eef0f3; --muted:#9aa3b0; --line:#2a303a;
+  --accent:#ff7a3d; --accent-ink:#1a0d05; --accent-soft:#3a2117;
+  --good:#5fd08e; --good-soft:#15301f; --warn:#e8b54a; --warn-soft:#33290f; --bad:#ff8a7e; --bad-soft:#3a1b18;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font:15px/1.45 var(--body);-webkit-font-smoothing:antialiased}
+header{padding:calc(14px + env(safe-area-inset-top)) 16px 10px;background:var(--surface);border-bottom:1px solid var(--line)}
+h1{font:700 26px/1.05 var(--display);letter-spacing:.3px;margin:0;text-wrap:balance;text-transform:uppercase}
+.sub{color:var(--muted);font-size:13px;margin-top:4px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.stat{background:var(--bg);border-radius:10px;padding:8px 6px;text-align:center;border:1px solid var(--line)}
+.stat b{display:block;font:700 22px/1 var(--display);font-variant-numeric:tabular-nums}
+.stat span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.stat.hot b{color:var(--accent)}
+main{padding:14px 16px calc(96px + env(safe-area-inset-bottom));max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.notice{background:var(--warn-soft);color:var(--warn);border-radius:10px;padding:10px 12px;font-size:13px}
+.sectionhead{display:flex;justify-content:space-between;align-items:baseline;margin-top:4px}
+.sectionhead h2{font:700 19px/1 var(--display);text-transform:uppercase;letter-spacing:.4px;margin:0}
+.sectionhead small{color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px;border-left:4px solid var(--line)}
+.card.vacancy{border-left-color:var(--accent)}
+.card.spec{border-left-color:var(--warn)}
+.card.replied{border-left-color:var(--good)}
+.card h3{margin:0;font-size:16px;font-weight:600;line-height:1.3}
+.meta{color:var(--muted);font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12px;padding:3px 8px;border-radius:999px;background:var(--bg);border:1px solid var(--line);white-space:nowrap}
+.chip.pay{background:var(--accent-soft);border-color:transparent;color:var(--ink);font-weight:600}
+.chip.good{background:var(--good-soft);color:var(--good);border-color:transparent}
+.chip.warn{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.chip.bad{background:var(--bad-soft);color:var(--bad);border-color:transparent}
+.fit{font-size:14px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.btn{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:600 14px var(--body);padding:9px 12px;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+details{border-top:1px dashed var(--line);padding-top:8px}
+summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--muted)}
+.cover{white-space:pre-wrap;font-size:14px;background:var(--bg);border-radius:10px;padding:10px;margin-top:8px}
+select{font:500 14px var(--body);padding:8px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.empty{color:var(--muted);text-align:center;padding:24px 8px;font-size:14px}
+.area{display:flex;flex-direction:column;gap:6px}
+.area h3{font:700 16px var(--display);text-transform:uppercase;letter-spacing:.4px;margin:10px 0 2px;color:var(--muted)}
+.dealer{display:grid;grid-template-columns:1fr auto;gap:2px 10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.dealer .n{font-weight:600}
+.dealer .m{grid-column:1/-1;color:var(--muted);font-size:12px}
+.dealer a{color:var(--accent);font-size:13px}
+.play{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.play h3{font:700 18px var(--display);text-transform:uppercase;margin:0 0 6px}
+.play p,.play li{max-width:65ch}
+.play ul,.play ol{padding-left:20px;margin:6px 0}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding-bottom:env(safe-area-inset-bottom)}
+nav button{appearance:none;background:none;border:0;color:var(--muted);font:600 11px var(--body);padding:10px 2px 9px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;position:relative}
+nav button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8}
+nav button[aria-current="page"]{color:var(--accent)}
+nav .badge{position:absolute;top:5px;left:calc(50% + 6px);background:var(--accent);color:var(--accent-ink);font-size:10px;border-radius:999px;padding:1px 5px;min-width:16px}
+.jarvis{margin-top:10px;display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.jarvis .dot{flex:none;width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:5px;box-shadow:0 0 0 4px var(--accent-soft)}
+.btn.cv{border-color:var(--accent);color:var(--accent)}
+.btn[disabled]{opacity:.6;cursor:progress}
+.working{font-size:13px;color:var(--accent);font-weight:600}
+.sheet{position:fixed;inset:0;background:rgba(10,12,16,.55);display:none;align-items:flex-end;justify-content:center;z-index:20}
+.sheet.open{display:flex}
+.sheet .panel{background:var(--surface);color:var(--ink);width:100%;max-width:680px;max-height:92%;border-radius:18px 18px 0 0;display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom)}
+.sheet .bar{display:flex;gap:8px;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line)}
+.sheet .bar h2{font:700 18px var(--display);text-transform:uppercase;margin:0}
+.sheet .body{overflow:auto;padding:16px}
+.sheet .tools{display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px;border-top:1px solid var(--line)}
+.cvdoc{font-size:13.5px;line-height:1.45}
+.cvdoc h1{font:700 22px var(--body);text-transform:none;margin:0}
+.cvdoc h4{font-size:13px;text-transform:uppercase;letter-spacing:.5px;margin:14px 0 4px;border-bottom:1px solid var(--line);padding-bottom:2px}
+.cvdoc .role{font-weight:600;margin-top:8px}
+.cvdoc .dates{color:var(--muted);font-size:12px}
+.cvdoc ul{margin:4px 0;padding-left:18px}
+.changes{background:var(--accent-soft);border-radius:10px;padding:10px 12px;font-size:13px;margin-bottom:12px}
+.prep{white-space:pre-wrap;font-size:14px}
+.brand{display:flex;align-items:center;gap:10px}.brand img{width:40px;height:40px;border-radius:10px}.top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:999px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion: reduce){.toast{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div class="brand"><img src="icon-180.png" alt=""><div><h1>PLAN</h1><div class="sub" id="scanline">Automotive sales · 45 min from Bedford</div></div></div>
+    <button class="btn" id="refresh" aria-label="Refresh jobs">Refresh</button>
+  </div>
+  <div class="stats" aria-label="Summary">
+    <div class="stat hot"><b id="s-new">0</b><span>New</span></div>
+    <div class="stat"><b id="s-applied">0</b><span>Applied</span></div>
+    <div class="stat"><b id="s-replies">0</b><span>Replies</span></div>
+    <div class="stat"><b id="s-dealers">0</b><span>Dealers</span></div>
+  </div>
+  <div class="jarvis"><span class="dot" aria-hidden="true"></span><span id="brief">Loading your plan…</span></div>
+</header>
+<main id="view" aria-live="polite"><div class="empty">Loading your jobs…</div></main>
+<div class="toast" id="toast" role="status"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+  <div class="panel">
+    <div class="bar"><h2 id="sheet-title">Prep</h2><button class="btn" id="sheet-close">Close</button></div>
+    <div class="body" id="sheet-body"></div>
+  </div>
+</div>
+<nav aria-label="Sections">
+  <button id="tab-new" data-tab="new"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>New<span class="badge" id="b-new" hidden></span></button>
+  <button id="tab-applied" data-tab="applied"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Applied</button>
+  <button id="tab-replies" data-tab="replies"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg>Replies<span class="badge" id="b-replies" hidden></span></button>
+  <button id="tab-dealers" data-tab="dealers"><svg viewBox="0 0 24 24"><path d="M3 11l2-5h14l2 5v6H3z"/><circle cx="7.5" cy="17" r="1.6"/><circle cx="16.5" cy="17" r="1.6"/></svg>Dealers</button>
+  <button id="tab-playbook" data-tab="playbook"><svg viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z"/><path d="M8 10h8M8 14h8"/></svg>Playbook</button>
+</nav>
+<template id="playbook">
+  <div class="play"><h3>Applying in under 3 minutes</h3>
+  <ol><li>Tap <b>Download CV tailored for this job</b>. It saves to Files.</li>
+  <li>Tap <b>Copy message</b>.</li>
+  <li>Tap <b>Go to apply page</b>. Let your iPhone AutoFill your name, email and phone, upload the CV from Files, and paste the message.</li>
+  <li>Come back and tap <b>I applied</b>.</li></ol></div>
+  <div class="play"><h3>No car sales experience? Start here</h3>
+  <p>Dealers hire trainees all the time. They want people who can talk to customers and won't give up. You have both: you deal with dealerships every day at BCA, and you sold premium packages by cold calling at Curve Media.</p>
+  <p>Say it like this: “I haven't sold cars yet, but I've been selling over the phone since 2023 and I handle premium cars every day. I want to learn the process properly.”</p></div>
+  <div class="play"><h3>Roles that take beginners</h3>
+  <ul><li><b>Trainee Sales Executive / Sales Advisor:</b> the main target. Basic pay plus commission.</li>
+  <li><b>Business Development Executive (BDC):</b> phone and email leads. Your cold calling fits this best.</li>
+  <li><b>Product Genius / Product Specialist:</b> BMW and MINI hire these without sales experience.</li>
+  <li><b>Sales Administrator / Handover Specialist:</b> a way in, then move to the sales floor.</li></ul></div>
+  <div class="play"><h3>Walk-in plan (works better than online)</h3>
+  <ol><li>Print 10 CVs. Dress like the sales team: shirt and smart trousers.</li>
+  <li>Go Tuesday to Thursday, 10–11am, when the showroom is quiet.</li>
+  <li>Ask for the Sales Manager by name. Get it from the dealer's website.</li>
+  <li>Thirty seconds: who you are, BCA, your cold-calling sales, that you want a trainee role.</li>
+  <li>Leave your CV and get their email. Follow up two days later.</li></ol></div>
+  <div class="play"><h3>Interview questions to prepare</h3>
+  <ul><li>Why car sales, and why us?</li><li>Sell me this pen (or this car).</li><li>Tell me about a time you closed a hard sale.</li><li>A customer says “I'll think about it”. What do you do?</li><li>Weekends: dealers expect Saturdays and some Sundays.</li></ul></div>
+  <div class="play"><h3>Reading the pay</h3>
+  <p><b>Basic</b> is guaranteed. <b>OTE</b> (on-target earnings) is basic plus commission if you hit targets. For a first year, aim for a basic of at least £20k and ask what trainees actually earned last year. A company car is worth roughly £3–5k a year to you.</p></div>
+</template>
+<script src="app.js"></script>
+</body>
+</html>
