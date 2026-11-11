@@ -39,8 +39,8 @@
     const cvName=`Rougier_Williams_CV_${String(j.company).replace(/[^A-Za-z0-9]+/g,"_")}.pdf`;
     let a1="", a2="";
     if(s==="new"){
-      a1=`${apply?`<a class="btn primary" href="${esc(apply)}" target="_blank" rel="noopener">${j.type==="speculative"?"Open careers page":"Go to apply page"}</a>`:""}
-        ${email?`<a class="btn primary" href="${esc(mailto(j))}">Email my application</a>`:""}
+      a1=`${apply?`<a class="btn primary" href="${esc(apply)}" target="_blank" rel="noopener" data-applying="${id}">${j.type==="speculative"?"Open careers page":"Go to apply page"}</a>`:""}
+        ${email?`<a class="btn primary" href="${esc(mailto(j))}" data-applying="${id}">Email my application</a>`:""}
         ${link&&link!==apply?`<a class="btn" href="${esc(link)}" target="_blank" rel="noopener">View listing</a>`:""}
         ${j.cover?`<button class="btn" data-copy="${id}">Copy message</button>`:""}`;
       a2=`<button class="btn cv" data-cv="${esc(cvHref)}" data-name="${esc(cvName)}">${j.cv?"Save tailored CV to Files":"Save my CV to Files"}</button>
@@ -68,15 +68,27 @@
     </article>`;
   }
   function exCard(x){
-    const link=safeUrl(x.link);
+    const link=safeUrl(x.link), s=st(x), id=esc(x.id);
+    const statusChip=s!=="new"?`<span class="chip ${s==="rejected"?"bad":(REPLY_STATES.includes(s)?"good":"")}">${esc(LABEL[s]||s)}</span>`:"";
+    const applied=local[x.id]&&local[x.id].appliedOn;
+    let actions;
+    if(s==="new"){
+      actions=`<div class="actions">${link?`<a class="btn primary" href="${esc(link)}" target="_blank" rel="noopener" data-applying="${id}">Open job &amp; apply</a>`:""}<button class="btn cv" data-cv="cvs/base.pdf" data-name="Rougier_Williams_CV.pdf">Save my CV to Files</button></div>
+      <div class="actions"><button class="btn" data-set="applied" data-id="${id}">I applied</button><button class="btn" data-set="dismissed" data-id="${id}">Not for me</button></div>`;
+    }else{
+      const opts=["applied","replied","interview","offer","started","rejected","new"].map(o=>`<option value="${o}"${o===s?" selected":""}>${o==="new"?"Move back to Explore":LABEL[o]}</option>`).join("");
+      actions=`<div class="actions"><label class="meta" for="sel-${id}">Status</label><select id="sel-${id}" data-status="${id}">${opts}</select>${link?`<a class="btn" href="${esc(link)}" target="_blank" rel="noopener">Open listing</a>`:""}</div>`;
+    }
     return `<article class="card ${x.category==="Digital marketing"?"spec":"vacancy"}">
       <h3>${esc(x.title)}</h3>
-      <div class="meta">${esc(x.company)} · ${esc(x.town)}</div>
-      <div class="chips"><span class="chip pay">${esc(x.pay)}</span><span class="chip">${esc(x.category)}</span>${x.driveMins?`<span class="chip">${esc(x.driveMins)} min drive</span>`:""}${x.closes?`<span class="chip warn">Closes ${fmtDate(x.closes)}</span>`:""}${x.checked?`<span class="chip good">✓ Link checked ${fmtDate(x.checked)}</span>`:""}</div>
+      <div class="meta">${esc(x.company)} · ${esc(x.town)}${applied?" · applied "+fmtDate(applied):""}</div>
+      <div class="chips"><span class="chip pay">${esc(x.pay)}</span><span class="chip">${esc(x.category)}</span>${x.driveMins?`<span class="chip">${esc(x.driveMins)} min drive</span>`:""}${x.closes&&s==="new"?`<span class="chip warn">Closes ${fmtDate(x.closes)}</span>`:""}${x.checked?`<span class="chip good">✓ Link checked ${fmtDate(x.checked)}</span>`:""}${statusChip}</div>
       ${x.why?`<div class="fit">${esc(x.why)}</div>`:""}
-      <div class="actions">${link?`<a class="btn primary" href="${esc(link)}" target="_blank" rel="noopener">Open job &amp; apply</a>`:""}<button class="btn cv" data-cv="cvs/base.pdf" data-name="Rougier_Williams_CV.pdf">Save my CV to Files</button></div>
+      ${actions}
     </article>`;
   }
+  function anyCard(i){return i.category?exCard(i):card(i);}
+  function listAny(a,msg){return a.length?a.map(anyCard).join(""):`<div class="empty">${msg}</div>`;}
   function list(a,msg){return a.length?a.map(card).join(""):`<div class="empty">${msg}</div>`;}
   const byFound=(a,b)=>String(b.found||"").localeCompare(String(a.found||""));
 
@@ -86,8 +98,9 @@
     TABS.forEach(t=>{const b=document.getElementById("tab-"+t);if(t===tab)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
     const nw=jobs.filter(j=>st(j)==="new");
     const vac=nw.filter(j=>j.type!=="speculative").sort(byFound), spec=nw.filter(j=>j.type==="speculative").sort(byFound);
-    const applied=jobs.filter(j=>st(j)==="applied");
-    const replies=jobs.filter(j=>REPLY_STATES.includes(st(j))||st(j)==="rejected");
+    const all=jobs.concat(explore);
+    const applied=all.filter(j=>st(j)==="applied");
+    const replies=all.filter(j=>REPLY_STATES.includes(st(j))||st(j)==="rejected");
     const live=replies.filter(j=>st(j)!=="rejected").length;
     document.getElementById("s-new").textContent=nw.length;
     document.getElementById("s-applied").textContent=applied.length;
@@ -112,7 +125,7 @@
       h+=`<div class="sectionhead"><h2>Ask directly</h2><small>${spec.length}</small></div>`+list(spec,"No direct approaches waiting.");
     }else if(tab==="explore"){
       const today=new Date().toISOString().slice(0,10);
-      const live=explore.filter(x=>!x.closes||x.closes>=today);
+      const live=explore.filter(x=>(!x.closes||x.closes>=today)&&st(x)==="new");
       const cats=["All",...new Set(live.map(x=>x.category))];
       if(!cats.includes(exFilter))exFilter="All";
       const shown=live.filter(x=>exFilter==="All"||x.category===exFilter);
@@ -121,9 +134,9 @@
       <div class="chips">${cats.map(c=>`<button class="btn${c===exFilter?" primary":""}" data-filter="${esc(c)}">${esc(c)}</button>`).join("")}</div>`;
       h+=shown.length?shown.map(exCard).join(""):`<div class="empty">Nothing in this group right now.</div>`;
     }else if(tab==="applied"){
-      h+=`<div class="sectionhead"><h2>Applied</h2><small>${applied.length}</small></div>`+list(applied,"Nothing yet. Tap “I applied” on a job and it moves here.");
+      h+=`<div class="sectionhead"><h2>Applied</h2><small>${applied.length}</small></div>`+listAny(applied,"Nothing yet. When you come back from an apply page, PLAN asks if you applied and moves the job here.");
     }else if(tab==="replies"){
-      h+=`<div class="sectionhead"><h2>Replies &amp; interviews</h2><small>${live} active</small></div>`+list(replies,"No replies yet. When a dealer gets back to you, open the job in Applied and change its status.");
+      h+=`<div class="sectionhead"><h2>Replies &amp; interviews</h2><small>${live} active</small></div>`+listAny(replies,"No replies yet. When a dealer gets back to you, open the job in Applied and change its status.");
     }else if(tab==="dealers"){
       h+=`<div class="sectionhead"><h2>Dealers watched</h2><small>${dealers.length}</small></div><p class="meta">Every dealer PLAN checks for you. The green tag shows how many jobs that dealer is advertising right now that suit you. Those jobs are in your New tab. "No jobs right now" just means nothing suitable is advertised today; you can still approach them directly.</p>`;
       const g={};dealers.forEach(d=>{const a=AREAS.includes(d.area)?d.area:"Other";(g[a]=g[a]||[]).push(d);});
@@ -139,7 +152,7 @@
   function setStatus(id,s){
     const cur=local[id]||{};if(cur.status===s)return;
     cur.status=s;if(s==="applied"&&!cur.appliedOn)cur.appliedOn=new Date().toISOString().slice(0,10);
-    local[id]=cur;save();render();toast(s==="dismissed"?"Hidden":s==="new"?"Back in New":"Moved to "+(LABEL[s]||s));
+    local[id]=cur;save();render();toast(s==="dismissed"?"Hidden":s==="new"?"Moved back":"Moved to "+(LABEL[s]||s));
   }
   const sheet=document.getElementById("sheet");
   function openSheet(t,body){document.getElementById("sheet-title").textContent=t;document.getElementById("sheet-body").innerHTML=body;sheet.classList.add("open");document.getElementById("sheet-close").focus();}
@@ -165,7 +178,24 @@
     finally{btn.disabled=false;btn.textContent=label;}
   }
 
+  // When you leave to apply, ask on return whether you applied, then move it to Applied.
+  let pending=null;
+  function findItem(id){return jobs.find(x=>x.id===id)||explore.find(x=>x.id===id);}
+  function askApplied(){
+    if(!pending)return;const it=findItem(pending);const id=pending;pending=null;
+    if(!it||st(it)!=="new")return;
+    openSheet("Did you apply?",`<p style="font-size:16px"><b>${esc(it.title)}</b><br>${esc(it.company)} · ${esc(it.town||"")}</p>
+      <div class="actions"><button class="btn primary" data-set="applied" data-id="${esc(id)}">Yes, move to Applied</button><button class="btn" data-close="1">Not yet</button></div>`);
+  }
+  document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"&&pending)setTimeout(askApplied,400);});
+  window.addEventListener("focus",()=>{if(pending)setTimeout(askApplied,400);});
+  document.getElementById("sheet-body").addEventListener("click",e=>{
+    const b=e.target.closest("[data-set]");if(b){setStatus(b.dataset.id,b.dataset.set);sheet.classList.remove("open");return;}
+    if(e.target.closest("[data-close]"))sheet.classList.remove("open");
+  });
+
   view.addEventListener("click",e=>{
+    const ap=e.target.closest("[data-applying]");if(ap){pending=ap.dataset.applying;}
     const cv=e.target.closest("[data-cv]");if(cv){saveCv(cv.dataset.cv,cv.dataset.name,cv);return;}
     const c=e.target.closest("[data-copy]");
     if(c){const j=jobs.find(x=>x.id===c.dataset.copy);if(!j)return;
