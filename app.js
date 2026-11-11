@@ -43,14 +43,14 @@
         ${email?`<a class="btn primary" href="${esc(mailto(j))}">Email my application</a>`:""}
         ${link&&link!==apply?`<a class="btn" href="${esc(link)}" target="_blank" rel="noopener">View listing</a>`:""}
         ${j.cover?`<button class="btn" data-copy="${id}">Copy message</button>`:""}`;
-      a2=`<a class="btn cv" href="${esc(cvHref)}" download="${esc(cvName)}">${j.cv?"Download CV tailored for this job":"Download my CV"}</a>
+      a2=`<button class="btn cv" data-cv="${esc(cvHref)}" data-name="${esc(cvName)}">${j.cv?"Save tailored CV to Files":"Save my CV to Files"}</button>
         <button class="btn" data-set="applied" data-id="${id}">I applied</button>
         <button class="btn" data-set="dismissed" data-id="${id}">Not for me</button>`;
     }else{
       const opts=["applied","replied","interview","offer","started","rejected","new"].map(o=>`<option value="${o}"${o===s?" selected":""}>${o==="new"?"Move back to New":LABEL[o]}</option>`).join("");
       a1=`<label class="meta" for="sel-${id}">Status</label><select id="sel-${id}" data-status="${id}">${opts}</select>
         ${link?`<a class="btn" href="${esc(link)}" target="_blank" rel="noopener">Open listing</a>`:""}`;
-      a2=`<a class="btn cv" href="${esc(cvHref)}" download="${esc(cvName)}">CV I sent</a>${j.prep?`<button class="btn" data-prep="${id}">Interview prep</button>`:""}`;
+      a2=`<button class="btn cv" data-cv="${esc(cvHref)}" data-name="${esc(cvName)}">Save CV I sent</button>${j.prep?`<button class="btn" data-prep="${id}">Interview prep</button>`:""}`;
     }
     const applied=local[j.id]&&local[j.id].appliedOn;
     return `<article class="card ${kind}">
@@ -74,7 +74,7 @@
       <div class="meta">${esc(x.company)} · ${esc(x.town)}</div>
       <div class="chips"><span class="chip pay">${esc(x.pay)}</span><span class="chip">${esc(x.category)}</span>${x.driveMins?`<span class="chip">${esc(x.driveMins)} min drive</span>`:""}${x.closes?`<span class="chip warn">Closes ${fmtDate(x.closes)}</span>`:""}${x.checked?`<span class="chip good">✓ Link checked ${fmtDate(x.checked)}</span>`:""}</div>
       ${x.why?`<div class="fit">${esc(x.why)}</div>`:""}
-      <div class="actions">${link?`<a class="btn primary" href="${esc(link)}" target="_blank" rel="noopener">Open job &amp; apply</a>`:""}<a class="btn cv" href="cvs/base.pdf" download="Rougier_Williams_CV.pdf">Download my CV</a></div>
+      <div class="actions">${link?`<a class="btn primary" href="${esc(link)}" target="_blank" rel="noopener">Open job &amp; apply</a>`:""}<button class="btn cv" data-cv="cvs/base.pdf" data-name="Rougier_Williams_CV.pdf">Save my CV to Files</button></div>
     </article>`;
   }
   function list(a,msg){return a.length?a.map(card).join(""):`<div class="empty">${msg}</div>`;}
@@ -82,6 +82,7 @@
 
   function render(){
     const tab=current();
+    const back=document.getElementById("back");if(back)back.hidden=(tab==="new");
     TABS.forEach(t=>{const b=document.getElementById("tab-"+t);if(t===tab)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
     const nw=jobs.filter(j=>st(j)==="new");
     const vac=nw.filter(j=>j.type!=="speculative").sort(byFound), spec=nw.filter(j=>j.type==="speculative").sort(byFound);
@@ -102,7 +103,7 @@
     let b=`${hi}, Rougier. `;
     if(jobs.some(j=>st(j)==="started"))b+="You're in the new job. Nice work.";
     else if(iv)b+=`You have ${iv} interview${iv>1?"s":""} lined up. Open Replies for your prep.`;
-    else if(vac.length)b+=`${vac.length} job${vac.length>1?"s are":" is"} ready${noExp?`, ${noExp} with no experience needed`:""}. Download the tailored CV, copy the message, then apply.`;
+    else if(vac.length)b+=`${vac.length} job${vac.length>1?"s are":" is"} ready${noExp?`, ${noExp} with no experience needed`:""}. Save the tailored CV, copy the message, then apply.`;
     else b+="Nothing new right now. I check every dealer again at 6:31am and 5:31pm.";
     document.getElementById("brief").textContent=b;
     let h="";
@@ -146,7 +147,26 @@
   sheet.addEventListener("click",e=>{if(e.target===sheet)sheet.classList.remove("open");});
   document.addEventListener("keydown",e=>{if(e.key==="Escape")sheet.classList.remove("open");});
 
+  // Save a CV without leaving the app: share sheet (Save to Files) on iPhone, normal download elsewhere.
+  async function saveCv(href,name,btn){
+    const label=btn.textContent;btn.disabled=true;btn.textContent="Preparing CV…";
+    try{
+      const r=await fetch(href+"?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("missing");
+      const blob=await r.blob();
+      const file=new File([blob],name,{type:"application/pdf"});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){
+        try{await navigator.share({files:[file],title:name});toast("Saved. Find it in Files");}
+        catch(err){if(err&&err.name!=="AbortError")throw err;}
+      }else{
+        const u=URL.createObjectURL(blob);const a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();
+        setTimeout(()=>URL.revokeObjectURL(u),4000);toast("CV downloaded");
+      }
+    }catch(_){toast("Couldn't get the CV. Check your signal and try again.");}
+    finally{btn.disabled=false;btn.textContent=label;}
+  }
+
   view.addEventListener("click",e=>{
+    const cv=e.target.closest("[data-cv]");if(cv){saveCv(cv.dataset.cv,cv.dataset.name,cv);return;}
     const c=e.target.closest("[data-copy]");
     if(c){const j=jobs.find(x=>x.id===c.dataset.copy);if(!j)return;
       (navigator.clipboard?navigator.clipboard.writeText(j.cover):Promise.reject()).then(()=>toast("Message copied")).catch(()=>toast("Open “Cover message” and copy it"));return;}
@@ -158,15 +178,20 @@
   document.querySelector("nav").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(!b)return;location.hash=b.dataset.tab;window.scrollTo(0,0);});
   window.addEventListener("hashchange",render);
 
-  async function load(){
+  let lastStamp="";
+  async function load(manual){
     const v="?t="+Date.now();
     try{
       const [a,b,c,x]=await Promise.all(["data/jobs.json","data/dealers.json","data/meta.json","data/explore.json"].map(u=>fetch(u+v,{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json();})));
       jobs=Array.isArray(a)?a:[];dealers=Array.isArray(b)?b:[];meta=c||null;explore=Array.isArray(x)?x:[];failed=false;
+      const stamp=(meta&&meta.lastScan)||"";if(lastStamp&&stamp!==lastStamp&&!manual)toast("PLAN just updated");lastStamp=stamp;
     }catch(_){failed=true;}
     loaded=true;render();
   }
   document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")load();});
-  document.getElementById("refresh").addEventListener("click",()=>{load().then(()=>toast("Up to date"));});
+  document.getElementById("refresh").addEventListener("click",()=>{load(true).then(()=>toast("Up to date"));});
+  document.getElementById("back").addEventListener("click",()=>{if(history.length>1&&document.referrer.indexOf(location.host)>-1)history.back();else{location.hash="new";}window.scrollTo(0,0);});
+  // Live updates: check for new data every 60 seconds while the app is open.
+  setInterval(()=>{if(document.visibilityState==="visible")load(false);},60000);
   render();load();
 })();
