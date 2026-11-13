@@ -116,7 +116,7 @@
     "area": "Luton",
     "careersUrl": "https://jobs.sytner.co.uk",
     "openRoles": 0,
-    "note": "Sytner Luton New Car Sales Executive still 'Vacancy Closed' (13 Nov); Reed shows only manager/service/prep roles",
+    "note": "Sytner Luton New Car Sales Executive still 'Vacancy Closed' (13 Nov midday)",
     "lastChecked": "2026-11-13"
   },
   {
@@ -156,7 +156,7 @@
     "area": "Milton Keynes",
     "careersUrl": "https://steveneagell.wd3.myworkdayjobs.com/ExternalCareerSite",
     "openRoles": 0,
-    "note": "Recruitment line 01908 248911 – no sales vacancies on Steven Eagell careers page 13 Nov",
+    "note": "Steven Eagell vacancies table empty on 13 Nov; recruitment line 01908 248911",
     "lastChecked": "2026-11-13"
   },
   {
@@ -206,7 +206,7 @@
     "area": "Luton",
     "careersUrl": "https://careers.lithia.co.uk",
     "openRoles": 0,
-    "note": "Evans Halshaw MK Sales Administrator advert closed; Bedford only has service/technician roles",
+    "note": "MK Sales Administrator and Bedford Ford Service Advisor adverts both show 'Vacancy Closed' (13 Nov)",
     "lastChecked": "2026-11-13"
   },
   {
@@ -286,7 +286,7 @@
     "area": "Milton Keynes",
     "careersUrl": "https://careers.marshall.co.uk",
     "openRoles": 0,
-    "note": "Sales Executive role has closed",
+    "note": "Car Sales Executive page (vacancy 5109) loads again but shows no apply button and isn't confirmed on Marshall's live list – not added (13 Nov midday)",
     "lastChecked": "2026-11-13"
   },
   {
@@ -447,6 +447,16 @@
     "careersUrl": "https://careers.parkwayvolkswagen.co.uk",
     "openRoles": 0,
     "note": "Retail Consultant (Derby/Leicester/Kettering, OTE £58k, sales experience not necessary) page still loads 13 Nov, but Parkway's live jobs list couldn't be reached to confirm – not listed yet",
+    "lastChecked": "2026-11-13"
+  },
+  {
+    "id": "grainger-letchworth",
+    "name": "Grainger Motor Group (Letchworth / Huntingdon / Royston)",
+    "group": "Grainger Motor Group",
+    "area": "Letchworth",
+    "careersUrl": "https://www.graingermotorgroup.com/careers",
+    "openRoles": 0,
+    "note": "Found in nearby sweep. Live list has Sales Executive roles at Huntingdon and Royston, but their pages couldn't be opened to confirm details yet; Letchworth Mazda role needs 2 yrs motor sales and isn't on the live list",
     "lastChecked": "2026-11-13"
   }
 ]
