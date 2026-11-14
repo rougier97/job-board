@@ -7,7 +7,7 @@
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
     "note": "",
-    "lastChecked": "2026-11-13"
+    "lastChecked": "2026-11-14"
   },
   {
     "id": "allen-ford-northampton",
@@ -17,7 +17,7 @@
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
     "note": "Sales Executive no longer on Allen's live vacancy list (13 Nov, late morning) – removed; you already applied",
-    "lastChecked": "2026-11-13"
+    "lastChecked": "2026-11-14"
   },
   {
     "id": "allen-kia-mk",
@@ -26,8 +26,8 @@
     "area": "Milton Keynes",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
-    "note": "Often hires sales advisors with no experience",
-    "lastChecked": "2026-11-13"
+    "note": "Only a Sales Controller role (needs dealership transaction experience) open 14 Nov.",
+    "lastChecked": "2026-11-14"
   },
   {
     "id": "allen-maxus-northampton",
@@ -37,7 +37,7 @@
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
     "note": "",
-    "lastChecked": "2026-11-13"
+    "lastChecked": "2026-11-14"
   },
   {
     "id": "allen-omoda-mk",
@@ -47,7 +47,7 @@
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
     "note": "",
-    "lastChecked": "2026-11-13"
+    "lastChecked": "2026-11-14"
   },
   {
     "id": "auto-globe",
@@ -116,8 +116,8 @@
     "area": "Luton",
     "careersUrl": "https://jobs.sytner.co.uk",
     "openRoles": 0,
-    "note": "Sytner Luton New Car Sales Executive still 'Vacancy Closed' (13 Nov midday)",
-    "lastChecked": "2026-11-13"
+    "note": "Sytner Luton New Car Sales Executive still 'Vacancy Closed' (14 Nov).",
+    "lastChecked": "2026-11-14"
   },
   {
     "id": "carnet-bedford",
@@ -246,8 +246,8 @@
     "area": "Northampton",
     "careersUrl": "https://careers.listers.co.uk",
     "openRoles": 0,
-    "note": "Both Listers Northampton Car Sales Executive adverts (Honda and Listers U) show 'vacancy now closed'",
-    "lastChecked": "2026-11-12"
+    "note": "Both Listers Northampton Car Sales Executive adverts (Honda and Listers U) still show 'vacancy now closed' (14 Nov).",
+    "lastChecked": "2026-11-14"
   },
   {
     "id": "lr-northampton",
@@ -266,8 +266,8 @@
     "area": "Bedford",
     "careersUrl": "https://careers.marshall.co.uk",
     "openRoles": 0,
-    "note": "Car Sales Executive (Premium, £27k basic / £50k+ OTE) advertised on Indeed 11 Nov, but its Marshall careers page (vacancy 4635) returned an error on 13 Nov – not listed",
-    "lastChecked": "2026-11-13"
+    "note": "Car Sales Executive (Premium, £27k basic / £50k+ OTE, 'no sales experience will be considered') re-advertised about 12 Nov per job boards, but Marshall's own vacancy page couldn't be opened 14 Nov – not listed yet. Worth checking careers.marshall.co.uk yourself.",
+    "lastChecked": "2026-11-14"
   },
   {
     "id": "marshall-volvo-mk",
@@ -286,8 +286,8 @@
     "area": "Milton Keynes",
     "careersUrl": "https://careers.marshall.co.uk",
     "openRoles": 0,
-    "note": "Car Sales Executive page (vacancy 5109) loads again but shows no apply button and isn't confirmed on Marshall's live list – not added (13 Nov midday)",
-    "lastChecked": "2026-11-13"
+    "note": "Car Sales Executive (vacancy 5109, £27k/£50k+ OTE) page loads 14 Nov but no apply button shown and needs previous sales experience – not added.",
+    "lastChecked": "2026-11-14"
   },
   {
     "id": "mb-milton-keynes",
@@ -416,8 +416,8 @@
     "area": "Northampton",
     "careersUrl": "https://jobs.sytner.co.uk",
     "openRoles": 0,
-    "note": "",
-    "lastChecked": "2026-11-13"
+    "note": "Sytner Select Northampton Sales Executive shows 'Vacancy Closed' (14 Nov).",
+    "lastChecked": "2026-11-14"
   },
   {
     "id": "thurlow-nunn-vauxhall-luton",
@@ -446,8 +446,8 @@
     "area": "Northampton",
     "careersUrl": "https://careers.parkwayvolkswagen.co.uk",
     "openRoles": 0,
-    "note": "Retail Consultant (Derby/Leicester/Kettering, OTE £58k, sales experience not necessary) page still loads 13 Nov, but Parkway's live jobs list couldn't be reached to confirm – not listed yet",
-    "lastChecked": "2026-11-13"
+    "note": "Retail Consultant (Derby/Leicester/Kettering, OTE £58k, sales experience not necessary) page still loads 14 Nov, but no apply form shown and Parkway's live jobs list couldn't be reached – not listed yet.",
+    "lastChecked": "2026-11-14"
   },
   {
     "id": "grainger-letchworth",
@@ -456,7 +456,17 @@
     "area": "Letchworth",
     "careersUrl": "https://www.graingermotorgroup.com/careers",
     "openRoles": 1,
-    "note": "Found in nearby sweep. Sales Executive at the new Omoda & Jaecoo site in Huntingdon confirmed live 13 Nov (added). Royston Sales Executive also listed but couldn't be opened this run (~50 min drive).",
-    "lastChecked": "2026-11-13"
+    "note": "Found in nearby sweep. Huntingdon Omoda & Jaecoo Sales Executive re-confirmed live 14 Nov. Royston Sales Executive still on Grainger's list but its page couldn't be opened this run (~45–50 min drive).",
+    "lastChecked": "2026-11-14"
+  },
+  {
+    "id": "webuyanycar-biggleswade",
+    "name": "We Buy Any Car Biggleswade",
+    "group": "webuyanycar",
+    "area": "Biggleswade",
+    "careersUrl": "https://careers.webuyanycar.com",
+    "openRoles": 0,
+    "note": "Found in nearby sweep. Sales Executive (£28.2k basic / £35.2k OTE, buying cars from the public) seen on a job board 14 Nov, but WBAC's own vacancy page couldn't be opened to confirm – not listed yet.",
+    "lastChecked": "2026-11-14"
   }
 ]
