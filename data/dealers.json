@@ -16,7 +16,7 @@
   "area": "Northampton",
   "careersUrl": "https://allenmotorgroup.teamtailor.com/",
   "openRoles": 0,
-  "note": "No Northampton roles on Allen's vacancy list 17 Nov. You applied to Sales Executive here on 11 Nov.",
+  "note": "Sales Executive – Ford Northampton is back on Allen's vacancy list with apply open (17 Nov). You already applied (11 Nov) – it stays in your Applied list; a polite follow-up call could help.",
   "lastChecked": "2026-11-17"
  },
  {
@@ -146,8 +146,8 @@
   "area": "Bedford",
   "careersUrl": "https://steveneagell.wd3.myworkdayjobs.com/ExternalCareerSite",
   "openRoles": 0,
-  "note": "Recruitment line 01234 827198 – no sales vacancies on Steven Eagell careers page 13 Nov",
-  "lastChecked": "2026-11-13"
+  "note": "Steven Eagell vacancies table empty 17 Nov; recruitment line 01234 827198.",
+  "lastChecked": "2026-11-17"
  },
  {
   "id": "eagell-toyota-mk",
@@ -176,8 +176,8 @@
   "area": "Bedford",
   "careersUrl": "https://careers.lithia.co.uk",
   "openRoles": 0,
-  "note": "",
-  "lastChecked": "2026-11-16"
+  "note": "New Trainee Sales Executive (£22k basic / £42k OTE) posted 17 Nov on job boards; not yet confirmed on Lithia careers – retrying next run.",
+  "lastChecked": "2026-11-17"
  },
  {
   "id": "eh-ford-mk",
@@ -206,8 +206,8 @@
   "area": "Luton",
   "careersUrl": "https://careers.lithia.co.uk",
   "openRoles": 0,
-  "note": "MK Sales Administrator and Bedford Ford Service Advisor adverts both show 'Vacancy Closed' (13 Nov)",
-  "lastChecked": "2026-11-16"
+  "note": "A new Trainee Sales Executive at Evans Halshaw Ford Bedford (£22k basic / £42k OTE uncapped) was posted today on Indeed, but Lithia's careers site couldn't be checked this run, so not added yet – will retry next run.",
+  "lastChecked": "2026-11-17"
  },
  {
   "id": "fs-performance",
@@ -266,8 +266,8 @@
   "area": "Bedford",
   "careersUrl": "https://careers.marshall.co.uk",
   "openRoles": 0,
-  "note": "Car Sales Executive (Premium, £27k basic / £50k+ OTE, 'no sales experience will be considered') was re-advertised on job boards ~12 Nov, but no Bedford listing could be found on Marshall's own careers site 16 Nov – not listed. Worth checking careers.marshall.co.uk yourself.",
-  "lastChecked": "2026-11-16"
+  "note": "Bedford Sales Executive page (vacancy 4635) no longer loads and no Bedford roles on Marshall's search 17 Nov.",
+  "lastChecked": "2026-11-17"
  },
  {
   "id": "marshall-volvo-mk",
@@ -285,9 +285,9 @@
   "group": "Marshall Motor Group",
   "area": "Milton Keynes",
   "careersUrl": "https://careers.marshall.co.uk",
-  "openRoles": 0,
-  "note": "Car Sales Executive (vacancy 5109, £27k/£50k+ OTE) page loads 14 Nov but no apply button shown and needs previous sales experience – not added.",
-  "lastChecked": "2026-11-16"
+  "openRoles": 1,
+  "note": "Service Advisor (£31.3k basic / £37.3k OTE, automotive background only 'ideally') added 17 Nov. Car Sales Executive (vacancy 5109) still wants previous sales experience and shows no apply button.",
+  "lastChecked": "2026-11-17"
  },
  {
   "id": "mb-milton-keynes",
@@ -426,8 +426,8 @@
   "area": "Luton",
   "careersUrl": "https://careers.thurlownunn.co.uk/jobs",
   "openRoles": 0,
-  "note": "Sales Administrator advert couldn't be confirmed as still open, so it was removed",
-  "lastChecked": "2026-11-11"
+  "note": "Careers list 17 Nov shows a Sales Administrator (maternity cover) in Luton, but its application page couldn't be opened this run, so not added.",
+  "lastChecked": "2026-11-17"
  },
  {
   "id": "wollaston-bmw",
@@ -456,7 +456,7 @@
   "area": "Letchworth",
   "careersUrl": "https://www.graingermotorgroup.com/careers",
   "openRoles": 1,
-  "note": "Found in nearby sweep. Huntingdon Omoda & Jaecoo Sales Executive re-verified 17 Nov 10:49. Cambridge Sales Executive (£45k) and Royston Sales Executive are on Grainger's careers list again (17 Nov) but their own pages couldn't be opened this run, so not added yet. No Letchworth sales roles.",
+  "note": "Huntingdon Omoda & Jaecoo Sales Executive re-verified 17 Nov 12:30. Grainger's list (17 Nov) also shows Sales Executive roles at Letchworth (group, Honda/OJ and Mazda) and Royston BYD, but their own pages couldn't be opened this run, so not added yet.",
   "lastChecked": "2026-11-17"
  },
  {
@@ -476,7 +476,7 @@
   "area": "Stevenage",
   "careersUrl": "https://careers.gates.co.uk/jobs",
   "openRoles": 1,
-  "note": "Found in nearby sweep. Trainee Sales Executive – BYD Stevenage (posted 16 Nov) added 17 Nov. Other Stevenage sales roles are 'Experienced' only; Trainee Transit Centre Sales Specialist not yet checked.",
+  "note": "Trainee Sales Executive – BYD Stevenage re-verified 17 Nov 12:30. Trainee Transit Centre Sales Specialist is still listed but was posted in July, so not added.",
   "lastChecked": "2026-11-17"
  }
 ]
