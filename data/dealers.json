@@ -176,7 +176,7 @@
     "area": "Bedford",
     "careersUrl": "https://careers.lithia.co.uk",
     "openRoles": 0,
-    "note": "New Trainee Sales Executive (£22k basic / £42k OTE uncapped) posted on Indeed 17 Nov; its Lithia careers page couldn't be found at 14:45 (Bedford Ford Service Advisor page loads fine) – retrying next run.",
+    "note": "Trainee Sales Executive (£22k basic / £42k OTE uncapped) still being advertised 17 Nov (Indeed alert + jobs boards), but its Lithia careers page couldn't be opened to prove it's open – not added yet. Worth applying directly on Lithia's careers site if you see it.",
     "lastChecked": "2026-11-17"
   },
   {
@@ -206,7 +206,7 @@
     "area": "Luton",
     "careersUrl": "https://careers.lithia.co.uk",
     "openRoles": 0,
-    "note": "A new Trainee Sales Executive at Evans Halshaw Ford Bedford (£22k basic / £42k OTE uncapped) was posted today on Indeed, but Lithia's careers site couldn't be checked this run, so not added yet – will retry next run.",
+    "note": "Bedford Ford Trainee Sales Executive (£22k / £42k OTE) seen on boards 17 Nov; Lithia careers page couldn't be opened this run, so not added yet.",
     "lastChecked": "2026-11-17"
   },
   {
@@ -286,7 +286,7 @@
     "area": "Milton Keynes",
     "careersUrl": "https://careers.marshall.co.uk",
     "openRoles": 0,
-    "note": "Service Advisor (vacancy 6749) taken off 17 Nov 13:45 because its page couldn't be re-checked this run; will be re-added (new id) if the next full check confirms it. Car Sales Executive (5109) still wants previous sales experience.",
+    "note": "Service Advisor (vacancy 6749) still off the list: Marshall's careers site couldn't be opened on the 17:31 full check. Car Sales Executive (5109) still wants previous sales experience.",
     "lastChecked": "2026-11-17"
   },
   {
@@ -456,7 +456,7 @@
     "area": "Letchworth",
     "careersUrl": "https://www.graingermotorgroup.com/careers",
     "openRoles": 1,
-    "note": "Huntingdon Omoda & Jaecoo Sales Executive re-verified 17 Nov 14:45 (page + group list). Grainger's list also shows Sales Executive roles at Royston, Cambridge, Duxford and Ely, not yet checked individually.",
+    "note": "Huntingdon Omoda & Jaecoo Sales Executive re-verified 17 Nov 17:31. Letchworth Mazda Sales Executive (£30k–£55k) needs 2 years' motor sales experience – not a fit.",
     "lastChecked": "2026-11-17"
   },
   {
@@ -475,8 +475,8 @@
     "group": "Gates Group",
     "area": "Stevenage",
     "careersUrl": "https://careers.gates.co.uk/jobs",
-    "openRoles": 0,
-    "note": "Trainee Sales Executive – BYD Stevenage taken off at 14:45: Gates' careers site couldn't be opened this run to re-prove it's open (Indeed still showed it as just posted today). Will re-add with a new id once the Gates page loads again.",
+    "openRoles": 1,
+    "note": "Trainee Sales Executive – BYD Stevenage back in the list 17 Nov 17:31: page live (posted 16 Nov) and on Gates' jobs list. Gates also lists a Trainee Transit Centre Sales Specialist in Stevenage, but it was first posted in July, so not added.",
     "lastChecked": "2026-11-17"
   }
 ]
