@@ -176,7 +176,7 @@
   "area": "Bedford",
   "careersUrl": "https://careers.lithia.co.uk",
   "openRoles": 0,
-  "note": "New Trainee Sales Executive (£22k basic / £42k OTE) posted 17 Nov on job boards; not yet confirmed on Lithia careers – retrying next run.",
+  "note": "New Trainee Sales Executive (£22k basic / £42k OTE) seen on job boards 17 Nov; Lithia careers site still not loading at 13:45 – retrying next run.",
   "lastChecked": "2026-11-17"
  },
  {
@@ -285,8 +285,8 @@
   "group": "Marshall Motor Group",
   "area": "Milton Keynes",
   "careersUrl": "https://careers.marshall.co.uk",
-  "openRoles": 1,
-  "note": "Service Advisor (£31.3k basic / £37.3k OTE, automotive background only 'ideally') added 17 Nov. Car Sales Executive (vacancy 5109) still wants previous sales experience and shows no apply button.",
+  "openRoles": 0,
+  "note": "Service Advisor (vacancy 6749) taken off 17 Nov 13:45 because its page couldn't be re-checked this run; will be re-added (new id) if the next full check confirms it. Car Sales Executive (5109) still wants previous sales experience.",
   "lastChecked": "2026-11-17"
  },
  {
@@ -476,7 +476,7 @@
   "area": "Stevenage",
   "careersUrl": "https://careers.gates.co.uk/jobs",
   "openRoles": 1,
-  "note": "Trainee Sales Executive – BYD Stevenage re-verified 17 Nov 12:30. Trainee Transit Centre Sales Specialist is still listed but was posted in July, so not added.",
+  "note": "Trainee Sales Executive – BYD Stevenage re-verified 17 Nov 13:45. Trainee Transit Centre Sales Specialist is still listed but was posted in July, so not added.",
   "lastChecked": "2026-11-17"
  }
 ]
