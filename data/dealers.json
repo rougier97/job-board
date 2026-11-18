@@ -6,7 +6,7 @@
     "area": "Milton Keynes",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
-    "note": "Allen vacancy list 18 Nov: no sales roles here (only OMODA | JAECOO MK Sales Advisor and an MK General Manager).",
+    "note": "Allen vacancy list 18 Nov 15:45: sales roles near you are OMODA | JAECOO MK Sales Advisor and OMODA Northampton Sales Advisor.",
     "lastChecked": "2026-11-18"
   },
   {
@@ -16,7 +16,7 @@
     "area": "Northampton",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
-    "note": "Allen vacancy list 18 Nov: no sales roles here (only OMODA | JAECOO MK Sales Advisor and an MK General Manager).",
+    "note": "Allen vacancy list 18 Nov 15:45: sales roles near you are OMODA | JAECOO MK Sales Advisor and OMODA Northampton Sales Advisor.",
     "lastChecked": "2026-11-18"
   },
   {
@@ -26,7 +26,7 @@
     "area": "Milton Keynes",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
-    "note": "Allen vacancy list 18 Nov: no sales roles here (only OMODA | JAECOO MK Sales Advisor and an MK General Manager).",
+    "note": "Allen vacancy list 18 Nov 15:45: sales roles near you are OMODA | JAECOO MK Sales Advisor and OMODA Northampton Sales Advisor.",
     "lastChecked": "2026-11-18"
   },
   {
@@ -36,7 +36,7 @@
     "area": "Northampton",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
-    "note": "Allen vacancy list 18 Nov: no sales roles here (only OMODA | JAECOO MK Sales Advisor and an MK General Manager).",
+    "note": "Allen vacancy list 18 Nov 15:45: sales roles near you are OMODA | JAECOO MK Sales Advisor and OMODA Northampton Sales Advisor.",
     "lastChecked": "2026-11-18"
   },
   {
@@ -477,6 +477,16 @@
     "careersUrl": "https://careers.gates.co.uk/jobs",
     "openRoles": 0,
     "note": "Trainee Sales Executive – BYD Stevenage taken off at 14:31 on 18 Nov: Gates' careers site couldn't be opened to prove it's still open (it was live at 12:31 – worth checking careers.gates.co.uk yourself). Also listed earlier: Trainee Transit Centre Sales Specialist (too old), Trainee Sales Executive – Geely (Waltham Cross, over an hour).",
+    "lastChecked": "2026-11-18"
+  },
+  {
+    "id": "allen-omoda-northampton",
+    "name": "Allen Motor Group – OMODA Northampton",
+    "group": "Allen Motor Group",
+    "area": "Northampton",
+    "careersUrl": "https://allenmotorgroup.teamtailor.com/",
+    "openRoles": 1,
+    "note": "Sales Advisor posted 18 Nov (£23,453 basic + uncapped commission, no experience needed, full training) – added to your list 18 Nov. Found on Allen's careers page.",
     "lastChecked": "2026-11-18"
   }
 ]
