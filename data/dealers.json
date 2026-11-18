@@ -206,8 +206,8 @@
     "area": "Luton",
     "careersUrl": "https://careers.lithia.co.uk",
     "openRoles": 0,
-    "note": "Bedford Ford Trainee Sales Executive (£22k / £42k OTE) seen on boards 17 Nov; Lithia careers page couldn't be opened this run, so not added yet.",
-    "lastChecked": "2026-11-17"
+    "note": "Bedford Ford Trainee Sales Executive (£22k / £42k OTE, Lithia ref 27268) still advertised on boards 17-18 Nov, but Lithia's careers site couldn't be opened to verify it, so it's not in the app.",
+    "lastChecked": "2026-11-18"
   },
   {
     "id": "fs-performance",
@@ -246,8 +246,8 @@
     "area": "Northampton",
     "careersUrl": "https://careers.listers.co.uk",
     "openRoles": 0,
-    "note": "Honda Northampton and Listers U Northampton Car Sales Executive adverts (training given, experience not essential) still say 'vacancy now closed' (16 Nov). Worth joining Listers' Talent Community.",
-    "lastChecked": "2026-11-16"
+    "note": "Honda Northampton Trainee Car Sales Executive (VId 30602) shows 'This vacancy is now closed' (18 Nov).",
+    "lastChecked": "2026-11-18"
   },
   {
     "id": "lr-northampton",
@@ -456,8 +456,8 @@
     "area": "Letchworth",
     "careersUrl": "https://www.graingermotorgroup.com/careers",
     "openRoles": 1,
-    "note": "Huntingdon Omoda & Jaecoo Sales Executive re-verified 17 Nov 21:31. Letchworth Mazda Sales Executive (£30k–£55k) needs 2 years' motor sales experience – not a fit.",
-    "lastChecked": "2026-11-17"
+    "note": "Huntingdon Omoda & Jaecoo Sales Executive re-verified 18 Nov 06:31 (page live + on careers list). Other Grainger sales roles (Letchworth, Royston) couldn't be opened to check experience requirements.",
+    "lastChecked": "2026-11-18"
   },
   {
     "id": "webuyanycar-biggleswade",
@@ -476,7 +476,7 @@
     "area": "Stevenage",
     "careersUrl": "https://careers.gates.co.uk/jobs",
     "openRoles": 1,
-    "note": "Trainee Sales Executive – BYD Stevenage re-verified and back 17 Nov 21:31 (page live + top of Gates careers list). Also listed: Trainee Transit Centre Sales Specialist, Stevenage (not yet checked).",
-    "lastChecked": "2026-11-17"
+    "note": "Trainee Sales Executive – BYD Stevenage re-verified 18 Nov 06:31 (page live + top of Gates jobs list). Trainee Transit Centre Sales Specialist also listed but posted July (too old).",
+    "lastChecked": "2026-11-18"
   }
 ]
