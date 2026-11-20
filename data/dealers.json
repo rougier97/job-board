@@ -45,8 +45,8 @@
     "group": "Allen Motor Group",
     "area": "Milton Keynes",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
-    "openRoles": 1,
-    "note": "Sales Advisor OMODA | JAECOO MK re-verified 20 Nov 06:31 (page live + on Allen careers page).",
+    "openRoles": 0,
+    "note": "20 Nov 12:31: web pages couldn't be opened this run (fetch permission blocked), so the Sales Advisor OMODA | JAECOO MK couldn't be re-proved and was taken off PLAN. It was open at 06:31 – check it yourself or wait for the next full run.",
     "lastChecked": "2026-11-20"
   },
   {
@@ -455,8 +455,8 @@
     "group": "Grainger Motor Group",
     "area": "Letchworth",
     "careersUrl": "https://www.graingermotorgroup.com/careers",
-    "openRoles": 1,
-    "note": "Huntingdon Sales Executive re-verified 20 Nov 06:31 (page live + on careers list; 2 yrs motor sales 'preferred'). Also Sales Executive roles in Cambridge, Royston, Duxford, Ely, Spalding; Sales Administrator at Bury.",
+    "openRoles": 0,
+    "note": "20 Nov 12:31: web pages couldn't be opened this run (fetch permission blocked), so the Huntingdon Sales Executive couldn't be re-proved and was taken off PLAN. It was open at 06:31 – check it yourself or wait for the next full run.",
     "lastChecked": "2026-11-20"
   },
   {
@@ -485,8 +485,8 @@
     "group": "Allen Motor Group",
     "area": "Northampton",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
-    "openRoles": 1,
-    "note": "Sales Advisor Northampton OMODA re-verified 20 Nov 06:31 (page live + on Allen careers page).",
+    "openRoles": 0,
+    "note": "20 Nov 12:31: web pages couldn't be opened this run (fetch permission blocked), so the Sales Advisor Northampton OMODA couldn't be re-proved and was taken off PLAN. It was open at 06:31 – check it yourself or wait for the next full run.",
     "lastChecked": "2026-11-20"
   }
 ]
