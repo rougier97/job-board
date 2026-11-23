@@ -45,9 +45,9 @@
     "group": "Allen Motor Group",
     "area": "Milton Keynes",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
-    "openRoles": 1,
-    "note": "22 Nov 06:31: Allen careers /jobs shows Sales Advisor OMODA | JAECOO MK (in your list, no experience needed). Transaction Manager MK also listed (manager role, not added).",
-    "lastChecked": "2026-11-22"
+    "openRoles": 0,
+    "note": "23 Nov 06:31: Sales Advisor OMODA | JAECOO MK still says 'no longer active'.",
+    "lastChecked": "2026-11-23"
   },
   {
     "id": "auto-globe",
@@ -146,8 +146,8 @@
     "area": "Bedford",
     "careersUrl": "https://steveneagell.wd3.myworkdayjobs.com/ExternalCareerSite",
     "openRoles": 0,
-    "note": "Steven Eagell vacancies table empty 18 Nov; recruitment line 01234 827198.",
-    "lastChecked": "2026-11-19"
+    "note": "23 Nov 06:31: Workday careers site couldn't be opened.",
+    "lastChecked": "2026-11-23"
   },
   {
     "id": "eagell-toyota-mk",
@@ -246,8 +246,8 @@
     "area": "Northampton",
     "careersUrl": "https://careers.listers.co.uk",
     "openRoles": 0,
-    "note": "Honda Northampton Trainee Car Sales Executive (VId 30602) still shows 'This vacancy is now closed' (21 Nov).",
-    "lastChecked": "2026-11-21"
+    "note": "23 Nov 06:31: Listers careers shows no branches near Bedford.",
+    "lastChecked": "2026-11-23"
   },
   {
     "id": "lr-northampton",
@@ -265,9 +265,9 @@
     "group": "Marshall Motor Group",
     "area": "Bedford",
     "careersUrl": "https://careers.marshall.co.uk",
-    "openRoles": 0,
-    "note": "Bedford Sales Executive page (vacancy 4635) no longer loads and no Bedford roles on Marshall's search 17 Nov.",
-    "lastChecked": "2026-11-17"
+    "openRoles": 1,
+    "note": "23 Nov 06:31: Sales Executive (vacancy 6177, £27k basic / £50k+ OTE) live and on Marshall vacancy list – added.",
+    "lastChecked": "2026-11-23"
   },
   {
     "id": "marshall-volvo-mk",
@@ -286,8 +286,8 @@
     "area": "Milton Keynes",
     "careersUrl": "https://careers.marshall.co.uk",
     "openRoles": 0,
-    "note": "22 Nov 06:31: careers site couldn't be opened this run, so nothing could be proved. 21 Nov 06:31: Car Sales Executive at Marshall VW MK (£27k basic / £50k+ OTE, 'previous sales experience, automotive or another customer-facing environment') page loads (vacancy 5109) but no apply button could be confirmed and the search list couldn't be opened – not listed. Worth checking careers.marshall.co.uk yourself.",
-    "lastChecked": "2026-11-21"
+    "note": "23 Nov 06:31: Sales Executive 5109 page loads but not on Marshall's live list – not added.",
+    "lastChecked": "2026-11-23"
   },
   {
     "id": "mb-milton-keynes",
@@ -356,8 +356,8 @@
     "area": "Northampton",
     "careersUrl": "https://careers.parkwayvolkswagen.co.uk",
     "openRoles": 0,
-    "note": "No Northampton sales role. Kettering site is hiring",
-    "lastChecked": "2026-11-19"
+    "note": "23 Nov 06:31: careers site couldn't be opened; only technician/apprentice ads seen.",
+    "lastChecked": "2026-11-23"
   },
   {
     "id": "perrys-mk",
@@ -426,8 +426,8 @@
     "area": "Luton",
     "careersUrl": "https://careers.thurlownunn.co.uk/jobs",
     "openRoles": 0,
-    "note": "19 Nov: careers list still shows only Sales Administrator (maternity cover) in Luton, salary 'competitive' – not added.",
-    "lastChecked": "2026-11-19"
+    "note": "23 Nov 06:31: only vacancy is Sales Administrator (maternity cover) Luton; job page wouldn't load, pay 'Competitive' – not added.",
+    "lastChecked": "2026-11-23"
   },
   {
     "id": "wollaston-bmw",
@@ -446,8 +446,8 @@
     "area": "Northampton",
     "careersUrl": "https://careers.parkwayvolkswagen.co.uk",
     "openRoles": 0,
-    "note": "22 Nov 06:31: careers site couldn't be opened this run, so nothing could be proved. 19 Nov: Retail Consultant (OTE £58k, sales experience not necessary) and Customer Advisor (aftersales, ~£38k, wants motor-trade experience) pages load but no application form shows – not listed.",
-    "lastChecked": "2026-11-19"
+    "note": "23 Nov 06:31: careers site couldn't be opened; only technician/apprentice ads seen.",
+    "lastChecked": "2026-11-23"
   },
   {
     "id": "grainger-letchworth",
@@ -456,8 +456,8 @@
     "area": "Letchworth",
     "careersUrl": "https://www.graingermotorgroup.com/careers",
     "openRoles": 0,
-    "note": "22 Nov 09:31: job sites couldn't be opened this run, so the Sales Executive Huntingdon (Omoda & Jaecoo) ad is off your list until it can be re-proved open (it may well still be live – next run will retry).",
-    "lastChecked": "2026-11-22"
+    "note": "23 Nov 06:31: Sales Executive Huntingdon still on Grainger list but its job page is behind a bot-check, so it couldn't be proved open – kept off.",
+    "lastChecked": "2026-11-23"
   },
   {
     "id": "webuyanycar-biggleswade",
@@ -466,8 +466,8 @@
     "area": "Biggleswade",
     "careersUrl": "https://careers.webuyanycar.com",
     "openRoles": 0,
-    "note": "Found in nearby sweep. WBAC Sales Executive (Luton branches, £28.2k basic / £35.2k OTE) page loads 16 Nov but no apply button could be confirmed and it asks for target-driven experience – not listed yet.",
-    "lastChecked": "2026-11-16"
+    "note": "23 Nov 06:31: Area Sales Executive Bedford (4936) and Northampton (4938) seen on an aggregator (~17 Nov) but WBAC pages blocked – unproven, worth a look.",
+    "lastChecked": "2026-11-23"
   },
   {
     "id": "gates-stevenage",
@@ -475,9 +475,9 @@
     "group": "Gates Group",
     "area": "Stevenage",
     "careersUrl": "https://careers.gates.co.uk/jobs",
-    "openRoles": 0,
-    "note": "22 Nov 06:31: careers site couldn't be opened this run, so nothing could be proved. 21 Nov 06:31: careers.gates.co.uk still couldn't be opened, so the Trainee Sales Executive – BYD Stevenage can't be re-proved. Check careers.gates.co.uk yourself.",
-    "lastChecked": "2026-11-21"
+    "openRoles": 1,
+    "note": "23 Nov 06:31: Trainee Sales Executive BYD re-proved open (form + on Gates jobs list) – back in your list.",
+    "lastChecked": "2026-11-23"
   },
   {
     "id": "allen-omoda-northampton",
@@ -485,8 +485,8 @@
     "group": "Allen Motor Group",
     "area": "Northampton",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
-    "openRoles": 0,
-    "note": "22 Nov 09:31: job sites couldn't be opened this run, so the Sales Advisor Northampton OMODA ad is off your list until it can be re-proved open (it may well still be live – next run will retry).",
-    "lastChecked": "2026-11-22"
+    "openRoles": 1,
+    "note": "23 Nov 06:31: Sales Advisor Northampton OMODA re-proved open (Apply button + on Allen /jobs list) – back in your list.",
+    "lastChecked": "2026-11-23"
   }
 ]
