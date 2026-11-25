@@ -16,8 +16,8 @@
     "area": "Northampton",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
-    "note": "22 Nov 06:31: Allen careers /jobs shows Sales Advisor Northampton OMODA (in your list, no experience needed). No other Northampton sales roles.",
-    "lastChecked": "2026-11-22"
+    "note": "25 Nov 12:31: Allen current openings show only Sales Advisor Northampton OMODA nearby (in your list). Sales Controller Northampton Ford needs transaction-manager experience – not a fit.",
+    "lastChecked": "2026-11-25"
   },
   {
     "id": "allen-kia-mk",
@@ -46,8 +46,8 @@
     "area": "Milton Keynes",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
-    "note": "Sales Advisor OMODA | JAECOO MK closed ('position is no longer active', 24 Nov).",
-    "lastChecked": "2026-11-24"
+    "note": "25 Nov 12:31: Sales Advisor OMODA | JAECOO MK (8753222) still on Allen's front page but its own page says 'no longer active' – not added.",
+    "lastChecked": "2026-11-25"
   },
   {
     "id": "auto-globe",
@@ -146,8 +146,8 @@
     "area": "Bedford",
     "careersUrl": "https://steveneagell.wd3.myworkdayjobs.com/ExternalCareerSite",
     "openRoles": 0,
-    "note": "23 Nov 06:31: Workday careers site couldn't be opened.",
-    "lastChecked": "2026-11-23"
+    "note": "25 Nov 12:31: Steven Eagell vacancies table empty (Workday list couldn't be opened). Direct approach still in your list.",
+    "lastChecked": "2026-11-25"
   },
   {
     "id": "eagell-toyota-mk",
@@ -176,7 +176,7 @@
     "area": "Bedford",
     "careersUrl": "https://careers.lithia.co.uk",
     "openRoles": 0,
-    "note": "25 Nov 09:31: NEW Trainee Sales Executive at Bedford Ford (£22k basic / £42k OTE uncapped, no experience needed, full training; Lithia vacancy 27268, seen on freehire posted ~6h ago). Lithia's own page and vacancy list couldn't be opened to double-check, so it isn't in Jobs yet – search 'Trainee Sales Executive Bedford' on careers.lithia.co.uk. Service Advisor (vacancy 23455, £28,665 basic) page still loads with Apply Now.",
+    "note": "25 Nov 12:31: Service Advisor (vacancy 23455, £28,665 basic) page still live with Apply Now, but Lithia's vacancy list couldn't be opened to double-check, so not added. Trainee Sales Executive (27268, £22k/£42k OTE) still unproven – Lithia's pages wouldn't open this run. Worth searching 'Bedford' on careers.lithia.co.uk yourself.",
     "lastChecked": "2026-11-25"
   },
   {
@@ -416,8 +416,8 @@
     "area": "Northampton",
     "careersUrl": "https://jobs.sytner.co.uk",
     "openRoles": 0,
-    "note": "Sytner Select Northampton Sales Executive shows 'Vacancy Closed' (14 Nov).",
-    "lastChecked": "2026-11-15"
+    "note": "25 Nov 12:31: Sytner Bedford (Mercedes) and Luton (BMW) sales ads found are old (closed Sept 2025) and need car sales experience – nothing current nearby.",
+    "lastChecked": "2026-11-25"
   },
   {
     "id": "thurlow-nunn-vauxhall-luton",
@@ -485,8 +485,18 @@
     "group": "Allen Motor Group",
     "area": "Northampton",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
+    "openRoles": 1,
+    "note": "25 Nov 12:31: Sales Advisor Northampton OMODA re-proved open (Apply button + on Allen's current openings) – back in your list.",
+    "lastChecked": "2026-11-25"
+  },
+  {
+    "id": "glyn-hopkin-st-albans",
+    "name": "Glyn Hopkin Chery St Albans",
+    "group": "Glyn Hopkin",
+    "area": "St Albans",
+    "careersUrl": "https://www.glynhopkin.com/careers/",
     "openRoles": 0,
-    "note": "24 Nov 15:31: Sales Advisor Northampton OMODA taken off – Allen careers site couldn't be opened this run to re-prove it. Returns as soon as a run confirms it.",
-    "lastChecked": "2026-11-24"
+    "note": "25 Nov 12:31 (found in nearby sweep): Glyn Hopkin careers list shows 'Chery St Albans Sales Advisor' (£30k–£50k OTE uncapped, closes 31 Jan 2027) – its own page couldn't be opened to prove it, so not in Jobs yet. Glyn Hopkin say automotive experience isn't essential. ~40 min drive. Only a Parts Driver listed at Milton Keynes.",
+    "lastChecked": "2026-11-25"
   }
 ]
