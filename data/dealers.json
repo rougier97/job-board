@@ -16,8 +16,8 @@
     "area": "Northampton",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
-    "note": "25 Nov 14:31: Sales Advisor Northampton OMODA taken off your list – Allen's site couldn't be opened this run to re-prove it's still open. Will come back once a run confirms it.",
-    "lastChecked": "2026-11-25T14:45:00Z"
+    "note": "26 Nov 12:31: no Northampton Ford sales roles on Allen's job list (Sales Advisor OMODA Northampton is in your list).",
+    "lastChecked": "2026-11-26T12:50:00Z"
   },
   {
     "id": "allen-kia-mk",
@@ -36,8 +36,8 @@
     "area": "Northampton",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
-    "note": "25 Nov 14:31: Sales Advisor Northampton OMODA taken off your list – Allen's site couldn't be opened this run to re-prove it's still open. Will come back once a run confirms it.",
-    "lastChecked": "2026-11-25T14:45:00Z"
+    "note": "26 Nov 12:31: Commercial Sales Advisor MAXUS Northampton (£28k basic, no experience needed) is open but was posted 15 Sept – too old to add.",
+    "lastChecked": "2026-11-26T12:50:00Z"
   },
   {
     "id": "allen-omoda-mk",
@@ -46,8 +46,8 @@
     "area": "Milton Keynes",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
-    "note": "25 Nov 12:31: Sales Advisor OMODA | JAECOO MK (8753222) still on Allen's front page but its own page says 'no longer active' – not added.",
-    "lastChecked": "2026-11-25"
+    "note": "26 Nov 12:31: Sales Advisor OMODA | JAECOO MK (8753222) page says 'no longer active' – closed.",
+    "lastChecked": "2026-11-26T12:50:00Z"
   },
   {
     "id": "auto-globe",
@@ -76,8 +76,8 @@
     "area": "Bedford",
     "careersUrl": "",
     "openRoles": 0,
-    "note": "26 Nov 06:31: a job alert mentions a Bells Motor Group 'Sales Executive' in Bedford (£28k–£55k) – its listing couldn't be opened to prove it's open and check if experience is needed, so not in Jobs yet.",
-    "lastChecked": "2026-11-26"
+    "note": "26 Nov 12:31: Indeed alert still shows a Bells Motor Group Sales Executive in Bedford (£28k–£55k) but no listing could be found or opened to prove it – not added.",
+    "lastChecked": "2026-11-26T12:50:00Z"
   },
   {
     "id": "bells-volvo-northampton",
@@ -326,8 +326,8 @@
     "area": "Bedford",
     "careersUrl": "",
     "openRoles": 0,
-    "note": "Has hired trainee sales execs with no experience before. Careers page 18 Nov still only has a 'Future Vacancies' CV form.",
-    "lastChecked": "2026-11-18"
+    "note": "26 Nov 12:31: an old Motorvogue Bedford Sales Exec ad (£20k basic/£40k OTE, no experience needed) closed July 2025; nothing current.",
+    "lastChecked": "2026-11-26T12:50:00Z"
   },
   {
     "id": "motorvogue-northampton",
@@ -485,9 +485,9 @@
     "group": "Allen Motor Group",
     "area": "Northampton",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
-    "openRoles": 0,
-    "note": "25 Nov 16:31: Sales Advisor Northampton OMODA is off your list until a run can re-prove it (job site couldn't be opened from here since 14:31).",
-    "lastChecked": "2026-11-25"
+    "openRoles": 1,
+    "note": "26 Nov 12:31: Sales Advisor Northampton OMODA (8761238) re-proved open – page live with Apply + on Allen's job list. Back in your list.",
+    "lastChecked": "2026-11-26T12:50:00Z"
   },
   {
     "id": "glyn-hopkin-st-albans",
@@ -496,7 +496,7 @@
     "area": "St Albans",
     "careersUrl": "https://www.glynhopkin.com/careers/",
     "openRoles": 0,
-    "note": "25 Nov 12:31 (found in nearby sweep): Glyn Hopkin careers list shows 'Chery St Albans Sales Advisor' (£30k–£50k OTE uncapped, closes 31 Jan 2027) – its own page couldn't be opened to prove it, so not in Jobs yet. Glyn Hopkin say automotive experience isn't essential. ~40 min drive. Only a Parts Driver listed at Milton Keynes.",
-    "lastChecked": "2026-11-25"
+    "note": "26 Nov 12:31: Glyn Hopkin careers lists 8 Sales Advisor roles (£30k–£50k OTE), all Essex/London/Herts – none near Bedford. A 'Bedford' copy on an aggregator isn't on Glyn Hopkin's own list.",
+    "lastChecked": "2026-11-26T12:50:00Z"
   }
 ]
