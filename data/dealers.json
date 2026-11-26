@@ -26,8 +26,8 @@
     "area": "Milton Keynes",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
-    "note": "22 Nov 06:31: Allen careers /jobs shows Sales Advisor OMODA | JAECOO MK (in your list, no experience needed). Transaction Manager MK also listed (manager role, not added).",
-    "lastChecked": "2026-11-22"
+    "note": "26 Nov 23:31: an Indeed alert mentioned a Sales Advisor – Kia PBV MK role (£23,453 / £40k OTE) but it couldn't be found on Allen's careers page this run, so not added yet.",
+    "lastChecked": "2026-11-26T23:38:04Z"
   },
   {
     "id": "allen-maxus-northampton",
@@ -46,8 +46,8 @@
     "area": "Milton Keynes",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
     "openRoles": 0,
-    "note": "26 Nov 12:31: Sales Advisor OMODA | JAECOO MK (8753222) page says 'no longer active' – closed.",
-    "lastChecked": "2026-11-26T12:50:00Z"
+    "note": "26 Nov 23:31: Sales Advisor OMODA | JAECOO MK (8753222) still says 'no longer active' – closed.",
+    "lastChecked": "2026-11-26T23:38:04Z"
   },
   {
     "id": "auto-globe",
@@ -485,9 +485,9 @@
     "group": "Allen Motor Group",
     "area": "Northampton",
     "careersUrl": "https://allenmotorgroup.teamtailor.com/",
-    "openRoles": 0,
-    "note": "26 Nov 13:31: Sales Advisor Northampton OMODA (8761238) couldn't be re-checked this run (page fetch blocked) – taken off your list until a later run proves it's still open. Proved open at 12:31.",
-    "lastChecked": "2026-11-26T13:40:00Z"
+    "openRoles": 1,
+    "note": "26 Nov 23:31: Sales Advisor Northampton OMODA (8761238) re-proved open (Apply button, on Allen careers homepage) – back in your list.",
+    "lastChecked": "2026-11-26T23:38:04Z"
   },
   {
     "id": "glyn-hopkin-st-albans",
