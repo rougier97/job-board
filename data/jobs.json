@@ -1,120 +1,180 @@
 [
-  {
-    "id": "glyn-hopkin-mk-sales-advisor",
-    "title": "Sales Advisor (Nissan) — send your CV",
-    "company": "Glyn Hopkin Group",
-    "town": "Milton Keynes",
-    "driveMins": 35,
-    "pay": "£30k–£50k OTE (when hiring)",
-    "type": "speculative",
-    "noExperienceOk": true,
-    "found": "2026-11-10",
-    "link": "https://www.glynhopkin.com/careers/sales-advisors-glyn-hopkin-vacancy",
-    "applyUrl": "",
-    "applyEmail": "careers@glynhopkin.com",
-    "fit": "Their advert closed in April, but Glyn Hopkin ask people to email their CV at any time and match it to new sales advisor openings. No car sales experience needed. Weekends on a rota.",
-    "desc": "Nissan Sales Advisor. Previous retail and sales experience with a sales track record; automotive experience not essential (full training). Driving licence essential. Saturdays and alternate Sundays on a 5–6 day rota.",
-    "cover": "Hi Glyn Hopkin Careers team,\n\nI'd like to apply for a Sales Advisor role at your Milton Keynes site. My CV is attached.\n\nI currently work at BCA in Bedford, handling dealership drop-offs and collections, MOT and service movements, and customer handovers, working every day with premium cars from Mercedes-AMG and Porsche to McLaren and Bentley.\n\nBefore BCA I worked in sales at Curve Media, generating my own leads through cold calling and email outreach and closing premium packages with business owners and football and music representatives.\n\nI'm happy to work Saturdays and alternate Sundays, I have a full driving licence, and I'm ready to learn the full sales and finance process.\n\nKind regards,\nRougier Williams\n07407 433797",
-    "cv": {
-      "profile": [
-        "Sales professional with a proven track record at Curve Media, selling premium promotional packages to business owners and sports and music representatives through cold calling, email and direct outreach.",
-        "Now working at BCA in Bedford with dealerships every day on vehicle drop-offs, MOT and service movements and customer handovers. Keen to join Glyn Hopkin as a Nissan Sales Advisor, happy to work weekends, and ready to learn the full sales and finance process."
-      ],
-      "skills": [
-        "Sales track record",
-        "Cold calling & email prospecting",
-        "Closing & objection handling",
-        "Customer service",
-        "Customer handovers",
-        "Dealership communication",
-        "Weekend availability",
-        "Relationship building",
-        "Full UK driving licence"
-      ],
-      "objective": "To join Glyn Hopkin Group as a Nissan Sales Advisor in Milton Keynes, using my sales track record and dealership experience, and to build a long-term career with an employee-owned business.",
-      "order": {
-        "BCA": [
-          0,
-          1,
-          5,
-          2,
-          4,
-          3
-        ],
-        "Curve Media": [
-          1,
-          0,
-          3,
-          2,
-          4
-        ]
-      },
-      "changes": [
-        "Profile opens with your sales track record, which they ask for",
-        "Weekend availability added to skills, as it's essential for them",
-        "Objective mentions their employee ownership"
-      ]
-    },
-    "prep": "30-SECOND PITCH\nI've got a sales track record from Curve Media and I work with dealerships every day at BCA. I'm happy with Saturdays and alternate Sundays and ready to learn Nissan.\n\nLIKELY QUESTIONS\n• Your best sale? Use a real Curve Media deal.\n• Why Glyn Hopkin? Employee-owned, big group, room to progress.\n• Weekend work? Yes.\n\nASK THEM\n• How does the employee-ownership bonus work?\n\nRESEARCH\nThe Nissan range (Qashqai, Juke, Ariya) and the MK site.",
-    "checkNote": "Careers page / direct approach"
-  },
-  {
-    "id": "steven-eagell-toyota-bedford-speculative",
-    "title": "Trainee sales role — direct approach",
-    "company": "Steven Eagell Toyota",
-    "town": "Bedford",
-    "driveMins": 10,
-    "pay": "Not advertised",
-    "type": "speculative",
-    "noExperienceOk": true,
-    "found": "2026-11-11",
-    "link": "https://www.steveneagell.co.uk/recruitment/our-locations/bedford/",
-    "applyUrl": "https://steveneagell.wd3.myworkdayjobs.com/ExternalCareerSite",
-    "contact": "Recruitment line 01234 827198",
-    "fit": "No vacancy listed right now. Call the Bedford recruitment line 01234 827198 or walk in on a weekday mid-morning and ask for the Sales Manager. Toyota train new sales staff well.",
-    "desc": "Toyota sales; customer service; hybrid/EV product knowledge; training given.",
-    "cover": "Hi,\n\nI'm a Bedford local looking to start a career in car sales, and I'd love to be considered for any trainee or sales executive opening at Steven Eagell Toyota Bedford.\n\nI work at BCA, moving cars to and from dealerships and helping with customer handovers, and before that I worked in sales at Curve Media, cold calling and closing deals with business owners. I haven't sold cars yet, but I'm used to targets and I learn fast.\n\nCould I drop in my CV or have a quick chat with your Sales Manager?\n\nThanks,\nRougier Williams\n07407 433797",
-    "cv": {
-      "profile": [
-        "Bedford-based, customer-focused professional ready to start in car sales. At BCA I work with dealerships daily on drop-offs, MOT and service movements, vehicle preparation and customer handovers.",
-        "At Curve Media I generated and closed my own sales by phone and email. Keen to learn Toyota's hybrid and electric range and grow with Steven Eagell."
-      ],
-      "skills": [
-        "Customer service",
-        "Phone & email sales",
-        "Customer handovers",
-        "Dealership communication",
-        "Vehicle preparation",
-        "Working to targets",
-        "Relationship building",
-        "Quick learner",
-        "Full UK driving licence"
-      ],
-      "objective": "To start my car sales career with Steven Eagell Toyota Bedford and learn the Toyota hybrid and electric range.",
-      "order": {
-        "BCA": [
-          0,
-          1,
-          5,
-          2,
-          3,
-          4
-        ],
-        "Curve Media": [
-          0,
-          3,
-          1,
-          2,
-          4
-        ]
-      },
-      "changes": [
-        "Profile stresses you're local and customer-focused",
-        "Objective mentions Toyota's hybrid range",
-        "Skills kept simple for a trainee approach"
-      ]
-    },
-    "prep": "CALL OR WALK IN\nCall 01234 827198 and ask if there's a trainee sales opening, or walk in Tue–Thu around 10am. Say you're local, work with dealerships at BCA and have phone sales experience.\n\nKNOW\nToyota is mostly hybrid: Yaris, Corolla, C-HR, RAV4, plus bZ4X electric.",
-    "checkNote": "Careers page / direct approach"
+ {
+  "id": "allen-mk-kia-pbv-sales-advisor",
+  "title": "Sales Advisor – Kia PBV",
+  "company": "Allen Motor Group – Kia PBV Milton Keynes",
+  "town": "Milton Keynes",
+  "driveMins": 30,
+  "pay": "£23,453 basic / £40,000 OTE + uncapped commission, bonus & company vehicle",
+  "type": "vacancy",
+  "noExperienceOk": true,
+  "found": "2026-11-27",
+  "link": "https://allenmotorgroup.teamtailor.com/jobs/8800617-sales-advisor-kia-pbv-milton-keynes",
+  "applyUrl": "https://allenmotorgroup.teamtailor.com/jobs/8800617-sales-advisor-kia-pbv-milton-keynes",
+  "applyEmail": "",
+  "fit": "Posted 26 Nov: automotive or B2B sales experience is 'beneficial', not required, and £40k OTE is above your target. Your Curve Media prospecting of business owners suits selling Kia's business vans to companies.",
+  "desc": "Sell Kia's Professional Business Vehicles (PBV) range to business customers at Allen's Milton Keynes Kia PBV centre, reporting to the CV Sales Manager. Handle face-to-face, phone and online enquiries, build relationships with business customers, recommend vehicle solutions, prospect for new business, hit targets, learn the PBV range, keep records and follow company and Kia processes. They want strong communication, organisation, IT and customer skills and a motivated attitude. Full time, 42.5 hours, 5 days Monday to Saturday.",
+  "cover": "Hi Allen Motor Group recruitment team,\n\nI'd like to apply for the Sales Advisor role at Kia PBV Milton Keynes. My CV is attached.\n\nI work at BCA in Bedford, handling dealership drop-offs and collections, MOT and service movements, vehicle preparation and customer handovers, so I deal with dealerships and customers' vehicles every day.\n\nBefore that I spent over a year in business-to-business sales at Curve Media, finding my own leads through cold calls and email, building relationships with business owners and closing premium packages. I haven't sold vehicles yet, but prospecting businesses, following up and closing is what I did daily, and I'd love to bring that to Kia's PBV range.\n\nI'd welcome the chance to learn from your team.\n\nKind regards,\nRougier Williams\n07407 433797",
+  "prep": "30-SECOND PITCH\nI work at BCA with dealerships every day – drop-offs, MOT and service movements, handovers – and before that I did B2B sales at Curve Media, cold calling and emailing business owners and closing premium packages. I haven't sold vehicles yet, but finding business customers and closing is what I know, and I want to learn the PBV range properly.\n\nLIKELY QUESTIONS\n• Why commercial vehicles? Business customers buy on need and value – like your Curve Media clients.\n• How would you find new business? Call local trades and fleets, follow up by email, use referrals.\n• Tell me about a sale you closed. A real Curve Media deal: the lead, the objection, the close.\n• How do you handle targets? Curve Media was target-driven; you ran your own pipeline.\n• What do you know about Kia PBV? Kia's new electric van range, starting with the PV5.\n• Saturdays? Mon–Sat, 5-day week – say yes if you can.\n\nASK THEM\n• What training do new advisors get on the PBV range and finance?\n• How much business comes from inbound enquiries versus prospecting?\n\nRESEARCH\nKia PV5 models, range and price; Allen's other Milton Keynes sites (Kia, Chery, OMODA).",
+  "checked": "2026-11-27T14:38:53Z",
+  "checkNote": "Page live with apply button + listed on Allen careers homepage",
+  "cv": {
+   "profile": [
+    "Sales professional with business-to-business experience at Curve Media, generating new business through cold calling, targeted email and direct prospecting, managing prospects from first contact to conversion and building relationships with business owners and decision-makers.",
+    "Now working at BCA in Bedford with dealerships every day on drop-offs and collections, MOT and service movements, vehicle preparation and customer handovers. Keen to join Allen Motor Group's Kia PBV team in Milton Keynes and learn the full vehicle sales process."
+   ],
+   "skills": [
+    "B2B prospecting",
+    "Cold calling & email outreach",
+    "Closing & objection handling",
+    "Relationship building",
+    "Automotive customer service",
+    "Dealership communication",
+    "Customer handovers",
+    "Commercial communication",
+    "Full UK driving licence"
+   ],
+   "objective": "To join Allen Motor Group as a Sales Advisor at Kia PBV Milton Keynes, using my business-to-business sales and dealership experience to build a career in vehicle sales.",
+   "order": {
+    "BCA": [
+     0,
+     1,
+     5,
+     2,
+     3,
+     4
+    ],
+    "Curve Media": [
+     0,
+     2,
+     3,
+     4,
+     1
+    ]
+   },
+   "changes": [
+    "Profile leads with B2B prospecting, matching their business-customer focus",
+    "Prospecting and relationship building moved up in skills",
+    "Objective names Kia PBV Milton Keynes"
+   ]
   }
+ },
+ {
+  "id": "glyn-hopkin-mk-sales-advisor",
+  "title": "Sales Advisor (Nissan) — send your CV",
+  "company": "Glyn Hopkin Group",
+  "town": "Milton Keynes",
+  "driveMins": 35,
+  "pay": "£30k–£50k OTE (when hiring)",
+  "type": "speculative",
+  "noExperienceOk": true,
+  "found": "2026-11-10",
+  "link": "https://www.glynhopkin.com/careers/sales-advisors-glyn-hopkin-vacancy",
+  "applyUrl": "",
+  "applyEmail": "careers@glynhopkin.com",
+  "fit": "Their advert closed in April, but Glyn Hopkin ask people to email their CV at any time and match it to new sales advisor openings. No car sales experience needed. Weekends on a rota.",
+  "desc": "Nissan Sales Advisor. Previous retail and sales experience with a sales track record; automotive experience not essential (full training). Driving licence essential. Saturdays and alternate Sundays on a 5–6 day rota.",
+  "cover": "Hi Glyn Hopkin Careers team,\n\nI'd like to apply for a Sales Advisor role at your Milton Keynes site. My CV is attached.\n\nI currently work at BCA in Bedford, handling dealership drop-offs and collections, MOT and service movements, and customer handovers, working every day with premium cars from Mercedes-AMG and Porsche to McLaren and Bentley.\n\nBefore BCA I worked in sales at Curve Media, generating my own leads through cold calling and email outreach and closing premium packages with business owners and football and music representatives.\n\nI'm happy to work Saturdays and alternate Sundays, I have a full driving licence, and I'm ready to learn the full sales and finance process.\n\nKind regards,\nRougier Williams\n07407 433797",
+  "cv": {
+   "profile": [
+    "Sales professional with a proven track record at Curve Media, selling premium promotional packages to business owners and sports and music representatives through cold calling, email and direct outreach.",
+    "Now working at BCA in Bedford with dealerships every day on vehicle drop-offs, MOT and service movements and customer handovers. Keen to join Glyn Hopkin as a Nissan Sales Advisor, happy to work weekends, and ready to learn the full sales and finance process."
+   ],
+   "skills": [
+    "Sales track record",
+    "Cold calling & email prospecting",
+    "Closing & objection handling",
+    "Customer service",
+    "Customer handovers",
+    "Dealership communication",
+    "Weekend availability",
+    "Relationship building",
+    "Full UK driving licence"
+   ],
+   "objective": "To join Glyn Hopkin Group as a Nissan Sales Advisor in Milton Keynes, using my sales track record and dealership experience, and to build a long-term career with an employee-owned business.",
+   "order": {
+    "BCA": [
+     0,
+     1,
+     5,
+     2,
+     4,
+     3
+    ],
+    "Curve Media": [
+     1,
+     0,
+     3,
+     2,
+     4
+    ]
+   },
+   "changes": [
+    "Profile opens with your sales track record, which they ask for",
+    "Weekend availability added to skills, as it's essential for them",
+    "Objective mentions their employee ownership"
+   ]
+  },
+  "prep": "30-SECOND PITCH\nI've got a sales track record from Curve Media and I work with dealerships every day at BCA. I'm happy with Saturdays and alternate Sundays and ready to learn Nissan.\n\nLIKELY QUESTIONS\n• Your best sale? Use a real Curve Media deal.\n• Why Glyn Hopkin? Employee-owned, big group, room to progress.\n• Weekend work? Yes.\n\nASK THEM\n• How does the employee-ownership bonus work?\n\nRESEARCH\nThe Nissan range (Qashqai, Juke, Ariya) and the MK site.",
+  "checkNote": "Careers page / direct approach"
+ },
+ {
+  "id": "steven-eagell-toyota-bedford-speculative",
+  "title": "Trainee sales role — direct approach",
+  "company": "Steven Eagell Toyota",
+  "town": "Bedford",
+  "driveMins": 10,
+  "pay": "Not advertised",
+  "type": "speculative",
+  "noExperienceOk": true,
+  "found": "2026-11-11",
+  "link": "https://www.steveneagell.co.uk/recruitment/our-locations/bedford/",
+  "applyUrl": "https://steveneagell.wd3.myworkdayjobs.com/ExternalCareerSite",
+  "contact": "Recruitment line 01234 827198",
+  "fit": "No vacancy listed right now. Call the Bedford recruitment line 01234 827198 or walk in on a weekday mid-morning and ask for the Sales Manager. Toyota train new sales staff well.",
+  "desc": "Toyota sales; customer service; hybrid/EV product knowledge; training given.",
+  "cover": "Hi,\n\nI'm a Bedford local looking to start a career in car sales, and I'd love to be considered for any trainee or sales executive opening at Steven Eagell Toyota Bedford.\n\nI work at BCA, moving cars to and from dealerships and helping with customer handovers, and before that I worked in sales at Curve Media, cold calling and closing deals with business owners. I haven't sold cars yet, but I'm used to targets and I learn fast.\n\nCould I drop in my CV or have a quick chat with your Sales Manager?\n\nThanks,\nRougier Williams\n07407 433797",
+  "cv": {
+   "profile": [
+    "Bedford-based, customer-focused professional ready to start in car sales. At BCA I work with dealerships daily on drop-offs, MOT and service movements, vehicle preparation and customer handovers.",
+    "At Curve Media I generated and closed my own sales by phone and email. Keen to learn Toyota's hybrid and electric range and grow with Steven Eagell."
+   ],
+   "skills": [
+    "Customer service",
+    "Phone & email sales",
+    "Customer handovers",
+    "Dealership communication",
+    "Vehicle preparation",
+    "Working to targets",
+    "Relationship building",
+    "Quick learner",
+    "Full UK driving licence"
+   ],
+   "objective": "To start my car sales career with Steven Eagell Toyota Bedford and learn the Toyota hybrid and electric range.",
+   "order": {
+    "BCA": [
+     0,
+     1,
+     5,
+     2,
+     3,
+     4
+    ],
+    "Curve Media": [
+     0,
+     3,
+     1,
+     2,
+     4
+    ]
+   },
+   "changes": [
+    "Profile stresses you're local and customer-focused",
+    "Objective mentions Toyota's hybrid range",
+    "Skills kept simple for a trainee approach"
+   ]
+  },
+  "prep": "CALL OR WALK IN\nCall 01234 827198 and ask if there's a trainee sales opening, or walk in Tue–Thu around 10am. Say you're local, work with dealerships at BCA and have phone sales experience.\n\nKNOW\nToyota is mostly hybrid: Yaris, Corolla, C-HR, RAV4, plus bZ4X electric.",
+  "checkNote": "Careers page / direct approach"
+ }
 ]
